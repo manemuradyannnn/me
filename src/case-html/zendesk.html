@@ -1,0 +1,521 @@
+<!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
+<nav class="cs-nav">
+  <a href="/" class="cs-nav-left" aria-label="Home">
+    <img src="/assets/images/logo.png" alt="" class="cs-nav-logo">
+  </a>
+</nav>
+<!-- ═══ SIDENAV ═════════════════════════════════════════════════════ -->
+<aside class="cs-sidenav" aria-label="Case study sections">
+  <a href="/#works" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6">
+      </polyline>
+    </svg>
+    Back
+  </a>
+  <nav class="cs-side-nav">
+    <a href="#tldr" class="cs-side-link" data-target="tldr">TL;DR</a>
+    <a href="#background" class="cs-side-link" data-target="background">Background</a>
+    <a href="#problem" class="cs-side-link" data-target="problem">Problem</a>
+    <a href="#process" class="cs-side-link" data-target="process">Process</a>
+    <a href="#final-product" class="cs-side-link" data-target="final-product">Final Product</a>
+    <a href="#exploration" class="cs-side-link" data-target="exploration">Exploration</a>
+    <a href="#impact" class="cs-side-link" data-target="impact">Impact</a>
+    <a href="#reflections" class="cs-side-link" data-target="reflections">Reflections</a>
+  </nav>
+</aside>
+<main class="cs" id="cs-content">
+  <!-- ═══ HERO ═════════════════════════════════════════════════════ -->
+  <div class="cs-hero-visual" aria-hidden="true">
+    <img class="cs-hero-bg" src="/assets/zendesk/zendesk_site.png" alt="">
+    <img class="cs-hero-popup cs-hero-popup--chart" src="/assets/zendesk/suspension_graph.png" alt="">
+    <img class="cs-hero-popup cs-hero-popup--notice" src="/assets/zendesk/suspension_message.png" alt="">
+  </div>
+  <div class="cs-scroll-body">
+    <header class="cs-hero">
+      <p class="cs-company">
+        <img src="/assets/images/zendesk_icon.png" alt="" class="cs-company-icon">
+        Zendesk
+      </p>
+      <h1 class="cs-h1">Making Usage Visible</h1>
+      <ul class="cs-tags">
+        <li class="cs-tag--shipped">
+          <span class="cs-shipped-dot" aria-hidden="true">
+          </span>Shipped</li>
+          <li>Dashboard Analytics</li>
+          <li>B2B SaaS</li>
+        </ul>
+      </header>
+      <!-- ═══ TL;DR ════════════════════════════════════════════════════ -->
+      <section class="cs-section" id="tldr">
+        <p class="cs-section-label">TL;DR</p>
+        <p class="cs-body">
+          I designed a unified usage dashboard inside <a href="https://www.zendesk.com/" target="_blank" rel="noopener" class="cs-skip-btn">Zendesk</a>'s Admin Center, consolidating data that had been split across two tools. Scoped the MVP with engineering and shipped to <strong>10,000+ customers</strong>.
+        </p>
+        <dl class="cs-meta">
+          <div class="cs-meta-row">
+            <dt>My Role</dt>
+            <dd>Product Design Intern</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Timeline</dt>
+            <dd>4 weeks, Summer 2022</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Team</dt>
+            <dd>1 Product Manager<br>1 Sr. Product Designer<br>1 Content Designer<br>2 Software Developers</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Tools</dt>
+            <dd>Figma</dd>
+          </div>
+        </dl>
+      </section>
+      <!-- ═══ BACKGROUND ═══════════════════════════════════════════════ -->
+      <section class="cs-section" id="background">
+        <p class="cs-section-label">Background</p>
+        <h2 class="cs-h2">Growing pains</h2>
+        <p class="cs-body">
+          When Zendesk acquired startup Smooch.io in 2019, the platform was rebranded as
+          Sunshine Conversations and became the backbone of Zendesk's messaging
+          infrastructure. As part of the Conversations team, I was brought in to help unify the experience,
+          starting with how customers tracked their usage.
+        </p>
+        <div class="cs-diagram" aria-label="Zendesk and Smooch.io combined to become Sunshine Conversations">
+          <svg class="cs-diagram-lines cs-diagram-lines--desktop" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 32 26 L 44 26 L 44 50 L 60 50" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.2 1.2" vector-effect="non-scaling-stroke">
+            </path>
+            <path d="M 32 74 L 44 74 L 44 50 L 60 50" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.2 1.2" vector-effect="non-scaling-stroke">
+            </path>
+          </svg>
+          <svg class="cs-diagram-lines cs-diagram-lines--mobile" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 25 0 L 25 40 L 50 40" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.2 1.2" vector-effect="non-scaling-stroke">
+            </path>
+            <path d="M 75 0 L 75 40 L 50 40" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.2 1.2" vector-effect="non-scaling-stroke">
+            </path>
+            <path d="M 50 40 L 50 100" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.2 1.2" vector-effect="non-scaling-stroke">
+            </path>
+          </svg>
+          <div class="cs-diagram-node cs-diagram-node--tl">
+            <img src="/assets/zendesk/zendesk_full.png" alt="Zendesk" class="cs-diagram-logo">
+            <p class="cs-diagram-chip">Customer service software</p>
+          </div>
+          <div class="cs-diagram-node cs-diagram-node--bl">
+            <img src="/assets/zendesk/smooch_logo.png" alt="Smooch.io" class="cs-diagram-logo">
+            <p class="cs-diagram-chip">Omni-channel messaging</p>
+          </div>
+          <div class="cs-diagram-node cs-diagram-node--r">
+            <img src="/assets/zendesk/sunco_logo.png" alt="Sunshine Conversations" class="cs-diagram-logo">
+            <p class="cs-diagram-chip">Powers all messaging services across Zendesk</p>
+            <p class="cs-diagram-chip">All conversations captured in one place</p>
+          </div>
+        </div>
+      </section>
+      <!-- ═══ PROBLEM ══════════════════════════════════════════════════ -->
+      <section class="cs-section" id="problem">
+        <p class="cs-section-label">Problem</p>
+        <h2 class="cs-h2">Admins juggled two interfaces for one product</h2>
+        <p class="cs-body">
+          In order to view their complete analytics, customers were required to
+          alternate between two dashboards, creating a <strong>fragmented experience</strong>.
+        </p>
+        <p class="cs-body">
+          I was tasked with building a page inside the Admin Center where admins could track their Monthly Active Users (MAUs) and Notifications in one place.
+        </p>
+        <h3 class="cs-subhead">Design constraints</h3>
+        <div class="cs-considerations">
+          <ul class="cs-consideration-list">
+            <li>
+              <svg class="cs-consideration-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2">
+                </polygon>
+                <polyline points="2 17 12 22 22 17">
+                </polyline>
+                <polyline points="2 12 12 17 22 12">
+                </polyline>
+              </svg>
+              <span>New dashboard to match Zendesk's Admin Center design system</span>
+            </li>
+            <li>
+              <svg class="cs-consideration-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- a line chart: two axes and a zig-zag (hers; was bars) -->
+                <polyline points="3 3 3 21 21 21">
+                </polyline>
+                <polyline points="6.5 16 10.5 10.5 14 13.5 19.5 6">
+                </polyline>
+              </svg>
+              <span>No existing data visualization design system to lean on</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- ═══ DESIGN PROCESS ═══════════════════════════════════════════ -->
+      <section class="cs-section" id="process">
+        <p class="cs-section-label">Process</p>
+        <h2 class="cs-h2">Building around what admins need to know</h2>
+        <div class="cs-step">
+          <span class="cs-step-num">01</span>
+          <div class="cs-step-body">
+            <h3 class="cs-h3">Distilling the PRD</h3>
+            <p class="cs-body">
+              I boiled the requirements down to what admins were really asking, and what the page had to show for each.
+            </p>
+            <!-- her read of the PRD: each admin question and the requirement it became
+            (replaced the journey map; built in HTML so it stacks on phones) -->
+            <figure class="cs-prd" aria-label="Questions admins needed answered, and the requirements they became">
+              <p class="cs-prd-label">Questions admins needed answered</p>
+              <div class="cs-prd-grid">
+                <div class="cs-prd-group cs-prd-group--one">
+                  <p class="cs-prd-q">&ldquo;Where can I see my usage?&rdquo;</p>
+                  <span class="cs-prd-line" aria-hidden="true">
+                  </span>
+                  <p class="cs-prd-a">A new Usage section in the side nav.</p>
+                </div>
+                <div class="cs-prd-group cs-prd-group--two">
+                  <div class="cs-prd-qs">
+                    <p class="cs-prd-q">&ldquo;What&rsquo;s an MAU?&rdquo;</p>
+                    <p class="cs-prd-q">&ldquo;What&rsquo;s a Notification?&rdquo;</p>
+                  </div>
+                  <span class="cs-prd-bracket" aria-hidden="true">
+                  </span>
+                  <span class="cs-prd-line cs-prd-line--stack" aria-hidden="true">
+                  </span>
+                  <!-- the shared follow-up, where the two questions meet (hers) -->
+                  <p class="cs-prd-q cs-prd-q--merge">&ldquo;How many do I have?&rdquo;</p>
+                  <span class="cs-prd-line" aria-hidden="true">
+                  </span>
+                  <p class="cs-prd-a">Usage count and a link to learn more.</p>
+                  <p class="cs-prd-note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M6 2h12M6 22h12M7 2v4a5 5 0 0 0 10 0V2M7 22v-4a5 5 0 0 1 10 0v4">
+                      </path>
+                    </svg>
+                    6 months of history to spot trends.
+                  </p>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <div class="cs-step">
+          <span class="cs-step-num">02</span>
+          <div class="cs-step-body">
+            <h3 class="cs-h3">Sketching structure</h3>
+            <p class="cs-body">
+              My early sketch split MAUs and Notifications into tabs, with a
+              dropdown to switch billing periods. I wasn't sure yet how the data
+              should be organized, so I kept it rough and brought it to
+              stakeholders before investing in high fidelity.
+            </p>
+            <img src="/assets/zendesk/dashboard_sketch2.png" loading="lazy" alt="Sketch wireframes" class="cs-image cs-image--wide cs-image--bordered cs-expandable">
+            <p class="cs-caption">prototyping, pre-vibe coding era</p>
+          </div>
+        </div>
+        <div class="cs-step">
+          <span class="cs-step-num">03</span>
+          <div class="cs-step-body">
+            <h3 class="cs-h3">Iterating the hi-fi</h3>
+            <p class="cs-body">
+              When I presented the first round, stakeholders gave constructive feedback. I took the critique back to Figma, alongside the Admin Center design constraints, and reworked three things:
+            </p>
+            <div class="cs-iter-list">
+              <div class="cs-iter-item">
+                <p class="cs-card-label">
+                  <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                    </path>
+                    <polyline points="14 2 14 8 20 8">
+                    </polyline>
+                  </svg>
+                  One page, no switching
+                </p>
+                <p class="cs-card-body">
+                  Tabs didn't earn their keep when everything could fit on one page. I collapsed them into a single scroll.
+                </p>
+              </div>
+              <div class="cs-iter-item">
+                <p class="cs-card-label">
+                  <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z">
+                    </path>
+                    <circle cx="12" cy="12" r="3">
+                    </circle>
+                  </svg>
+                  Supporting scannability
+                </p>
+                <p class="cs-card-body">
+                  Metrics weren't scannable enough to be useful. I pulled the current-period numbers into three widgets up top.
+                </p>
+              </div>
+              <div class="cs-iter-item">
+                <p class="cs-card-label">
+                  <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="8" height="8" rx="1">
+                    </rect>
+                    <rect x="13" y="3" width="8" height="8" rx="1">
+                    </rect>
+                    <rect x="3" y="13" width="8" height="8" rx="1">
+                    </rect>
+                    <rect x="13" y="13" width="8" height="8" rx="1">
+                    </rect>
+                  </svg>
+                  Built from what existed
+                </p>
+                <p class="cs-card-body">
+                  I used components the Admin Center already had, so the page felt native and stayed light for engineering to build.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-step">
+          <span class="cs-step-num">04</span>
+          <div class="cs-step-body">
+            <h3 class="cs-h3">Scoping to what could ship</h3>
+            <p class="cs-body">
+              Given its high priority, my PM flagged that data visuals weren't feasible for the initial release, and engineering backed this up, as there was no existing graph infrastructure to build on. This forced me to <strong>figure out what the page truly needed</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ═══ MVP ══════════════════════════════════════════════════════ -->
+      <section class="cs-section" id="final-product">
+        <p class="cs-section-label">Final Product</p>
+        <h2 class="cs-h2">The MVP that shipped</h2>
+        <p class="cs-body">
+          Distinct widgets for the current period, table underneath for six months of MAU and notification history, all on one page. Inline links explain what MAUs and Notifications are and what counts toward each.
+        </p>
+        <picture>
+          <source srcset="/assets/zendesk/dashboard_mvp.webp" type="image/webp">
+          <img src="/assets/zendesk/dashboard_mvp.png" loading="lazy" alt="MVP — table only" class="cs-image cs-image--wide">
+        </picture>
+        <!-- 24px under this image on purpose (hers): its shadow makes the usual 16px read too close -->
+        <p class="cs-caption">
+          the shipped version, table-first.
+        </p>
+      </section>
+      <!-- ═══ EXPLORATION ══════════════════════════════════════════════ -->
+      <section class="cs-section" id="exploration">
+        <p class="cs-section-label">Exploration</p>
+        <h2 class="cs-h2">Visualizing the full picture</h2>
+        <p class="cs-body">
+          Once the MVP was scoped and approved, I was tasked with exploring
+          what a version with charts could look like as a future enhancement. I
+          also designed for the full range of states a customer might encounter.
+        </p>
+        <div class="cs-subsection">
+          <div class="cs-subsection-head">
+            <h3 class="cs-h3">Normal usage</h3>
+            <span class="cs-badge cs-badge--green">Default</span>
+          </div>
+          <p class="cs-body">
+            6-month bar graph and data table.
+          </p>
+          <picture>
+            <source srcset="/assets/zendesk/dashboard_default.webp" type="image/webp">
+            <img src="/assets/zendesk/dashboard_default.png" loading="lazy" alt="Final product — default state" class="cs-image cs-image--hero">
+          </picture>
+        </div>
+        <div class="cs-subsection">
+          <div class="cs-subsection-head">
+            <h3 class="cs-h3">Plan limit reached</h3>
+            <span class="cs-badge cs-badge--amber">Overage</span>
+          </div>
+          <p class="cs-body">
+            A message box prompts users to contact support to adjust
+            their plan. Affected metrics are called out in orange.
+          </p>
+          <picture>
+            <source srcset="/assets/zendesk/dashboard_overage.webp" type="image/webp">
+            <img src="/assets/zendesk/dashboard_overage.png" loading="lazy" alt="Overage state" class="cs-image cs-image--wide">
+          </picture>
+        </div>
+        <div class="cs-subsection">
+          <div class="cs-subsection-head">
+            <h3 class="cs-h3">Conversations paused</h3>
+            <span class="cs-badge cs-badge--red">Suspended</span>
+          </div>
+          <p class="cs-body">
+            When usage is severely over the limit, conversation services
+            are paused and a prominent error banner drives users to contact support.
+          </p>
+          <picture>
+            <source srcset="/assets/zendesk/dashboard_suspension.webp" type="image/webp">
+            <img src="/assets/zendesk/dashboard_suspension.png" loading="lazy" alt="Conversations paused state" class="cs-image cs-image--wide">
+          </picture>
+        </div>
+      </section>
+      <!-- ═══ IMPACT ═══════════════════════════════════════════════════ -->
+      <section class="cs-section" id="impact">
+        <p class="cs-section-label">Impact</p>
+        <h2 class="cs-h2">Shipping the small (but mighty) version</h2>
+        <p class="cs-body">
+          I designed the full dashboard vision, then cut it with engineering to what could ship. The table view launched, unblocking customers who had been jumping between two tools. I mapped API and integration schemas to accelerate the handoff, finishing ahead of schedule.
+        </p>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <p class="cs-stat-num" data-count-to="10000" data-count-suffix="+">10,000+</p>
+            <p class="cs-stat-label">Users reached at rollout</p>
+          </div>
+          <div class="cs-stat">
+            <p class="cs-stat-num" data-count-to="15" data-count-suffix="%">15%</p>
+            <p class="cs-stat-label">Faster feature completion</p>
+          </div>
+        </div>
+      </section>
+      <!-- ═══ LEARNINGS ════════════════════════════════════════════════ -->
+      <section class="cs-section" id="reflections">
+        <p class="cs-section-label">Reflections</p>
+        <div class="cs-learnings">
+          <div class="cs-learning">
+            <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+              </path>
+            </svg>
+            <h3 class="cs-h3">Beyond the design file</h3>
+            <p class="cs-body">
+              Leading a real project taught me that product design lives as
+              much in the conversations and tradeoffs as it does in Figma.
+            </p>
+          </div>
+          <div class="cs-learning">
+            <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6.13 1L6 16a2 2 0 0 0 2 2h15">
+              </path>
+              <path d="M1 6.13L16 6a2 2 0 0 1 2 2v15">
+              </path>
+            </svg>
+            <h3 class="cs-h3">Constraints clarify</h3>
+            <p class="cs-body">
+              Designing within real constraints forced me to get clear on what
+              the page actually needed versus what would be nice to have, and
+              how to make the case for the best experience within those
+              boundaries.
+            </p>
+          </div>
+          <div class="cs-learning">
+            <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 4 23 10 17 10">
+              </polyline>
+              <polyline points="1 20 1 14 7 14">
+              </polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
+              </path>
+            </svg>
+            <h3 class="cs-h3">Embracing the loop</h3>
+            <p class="cs-body">
+              Each round of feedback was a chance to ask the right questions,
+              navigate ambiguity, and ultimately pull the design somewhere better.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ═══ THANKS ══════════════════════════════════════════════════ -->
+      <p class="cs-thanks">
+        <em>thanks for reading</em>
+        <span class="cs-thanks-kao">(✿・‿・)ノ゛</span>
+      </p>
+      <!-- ═══ NEXT CASE STUDIES ═══════════════════════════════════════ -->
+      <section class="cs-next">
+        <p class="cs-section-label cs-section-label--grey">Up next</p>
+        <div class="cs-next-grid">
+          <a href="/work/neuralyfe" class="cs-next-card cs-next-card--navy">
+            <div class="cs-next-preview">
+            </div>
+            <div class="cs-next-meta">
+              <div class="cs-next-meta-row">
+                <p class="cs-next-company">
+                  <img src="/assets/images/figma_icon.png" alt="" class="cs-next-company-icon">
+                  FigBuild 2026
+                </p>
+                <span class="badge badge--on-light">🏆 1st Place</span>
+              </div>
+              <p class="cs-next-title">NeuraLyfe</p>
+            </div>
+          </a>
+          <a href="/work/reddit" class="cs-next-card cs-next-card--reddit">
+            <div class="cs-next-preview">
+              <!-- the homepage card's reel, parked on its rest frame (never told to
+              play): the smoky sky, "What's on your mind?", the blinking caret -->
+              <div class="rd-reel" data-trigger="manual" aria-hidden="true">
+                <!-- the sky: two gradient layers (::before/::after) and two wisps, pushed through an SVG
+                displacement filter, so the puffs and veils come out ragged like smoke and morph as
+                they drift under the fixed noise field -->
+                <div class="rd-sky">
+                  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+                    <filter id="rd-smoke" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+                      <feTurbulence type="fractalNoise" baseFrequency="0.0022 0.005" numOctaves="3" seed="11" result="noise">
+                        <animate attributeName="baseFrequency" values="0.0022 0.005;0.0027 0.0044;0.0019 0.0056;0.0025 0.0048;0.0022 0.005" dur="10s" repeatCount="indefinite">
+                        </animate>
+                      </feTurbulence>
+                      <!-- the displacement swells and settles, so the smoke's edges roll like waves -->
+                      <feDisplacementMap in="SourceGraphic" in2="noise" scale="230" xChannelSelector="R" yChannelSelector="G">
+                        <animate attributeName="scale" values="230;300;190;275;230" keyTimes="0;0.27;0.52;0.78;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" dur="4.3s" repeatCount="indefinite">
+                        </animate>
+                      </feDisplacementMap>
+                    </filter>
+                  </svg>
+                  <span class="rd-wisp rd-wisp--a">
+                  </span>
+                  <span class="rd-wisp rd-wisp--b">
+                  </span>
+                </div>
+                <!-- the message sits in .rd-typed-rest (hidden, so the row keeps its final width); the
+                script below moves it into .rd-typed-vis a character at a time, in step with the CSS -->
+                <div class="rd-scene">
+                  <div class="rd-grain">
+                  </div>
+                  <div class="rd-dusk">
+                  </div>
+                  <div class="rd-composer">
+                    <span class="rd-field">
+                      <span class="rd-placeholder">What's on your mind?</span>
+                      <span class="rd-typed">
+                        <span class="rd-typed-vis">
+                        </span>
+                        <span class="rd-caret">
+                        </span>
+                        <span class="rd-typed-rest">hi, first time posting!</span>
+                      </span>
+                    </span>
+                    <span class="rd-post-slot">
+                      <span class="rd-post-track">
+                        <span class="rd-post">Post</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="rd-star">
+                    <span class="rd-comet">
+                      <span class="rd-streak">
+                      </span>
+                      <span class="rd-dot">
+                      </span>
+                    </span>
+                    <span class="rd-burst">
+                    </span>
+                    <svg class="rd-star-glyph" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M12 0c.55 6.9 4.55 10.9 12 12-7.45 1.1-11.45 5.1-12 12-.55-6.9-4.55-10.9-12-12C7.45 10.9 11.45 6.9 12 0z">
+                      </path>
+                    </svg>
+                    <span class="rd-you">You</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-next-meta">
+              <div class="cs-next-meta-row">
+                <p class="cs-next-company">
+                  <img src="/assets/images/reddit_icon.png" alt="" class="cs-next-company-icon">
+                  Reddit
+                </p>
+                <span class="badge badge--building">
+                  <span class="building-dot">
+                  </span>Building</span>
+                </div>
+                <p class="cs-next-title">Showing Signs of Life</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>

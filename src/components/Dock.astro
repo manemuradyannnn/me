@@ -1,0 +1,64 @@
+<nav class="folder-nav" aria-label="Main navigation">
+  <div class="folder-nav-inner">
+    <button class="folder-item" type="button" data-panel="works" aria-label="Works">
+      <img
+        src="/assets/images/closed_folder.png"
+        data-icon-closed="/assets/images/closed_folder.png"
+        data-icon-open="/assets/images/open_folder.png"
+        alt=""
+        class="folder-icon folder-icon--img folder-icon--works"
+      />
+      <span class="folder-label">works</span>
+    </button>
+    <button class="folder-item" type="button" data-panel="sidequests" aria-label="Quests">
+      <span class="folder-icon folder-icon--sidequests" aria-hidden="true">
+        <img src="/assets/images/doodle.png" alt="" class="folder-sidequests-img" />
+      </span>
+      <span class="folder-label">quests</span>
+    </button>
+    <button class="folder-item" type="button" data-panel="profile" aria-label="Profile">
+      <span class="folder-icon folder-icon--profile" aria-hidden="true">
+        <img src="/assets/images/profile_pic.webp" alt="" class="folder-profile-img" />
+      </span>
+      <span class="folder-label">profile</span>
+    </button>
+  </div>
+</nav>
+
+<nav class="mobile-dock" aria-label="Mobile navigation">
+  <div class="dock-bar">
+    <button class="dock-item" type="button" data-panel="works" aria-label="Works">
+      <img
+        src="/assets/images/closed_folder.png"
+        data-icon-closed="/assets/images/closed_folder.png"
+        data-icon-open="/assets/images/open_folder.png"
+        alt=""
+        class="dock-icon dock-icon--img"
+      />
+      <span class="dock-label">works</span>
+    </button>
+    <button class="dock-item" type="button" data-panel="sidequests" aria-label="Quests">
+      <span class="dock-icon dock-icon--sq">
+        <img src="/assets/images/doodle.png" alt="" class="dock-sq-img" />
+      </span>
+      <span class="dock-label">quests</span>
+    </button>
+    <button class="dock-item" type="button" data-panel="profile" aria-label="Profile">
+      <span class="dock-icon dock-icon--profile">
+        <img src="/assets/images/profile_pic.webp" alt="" class="dock-profile-img" />
+      </span>
+      <span class="dock-label">profile</span>
+    </button>
+    <div class="dock-links-wrap">
+      <div class="dock-links-popup" id="dock-links-popup">
+        <a href="https://linkedin.com/in/cindy-k-ly/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="mailto:cindykimly@gmail.com" aria-label="Email">@</a>
+        <a href="https://drive.google.com/file/d/1b8yyN0Z8tXkYLakjVOsYQzEKLJM31PET/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Resume">cv</a>
+      </div>
+      <button class="dock-item dock-item--links" id="dock-links" type="button" aria-label="Links">
+        <span class="dock-icon dock-icon--links" aria-hidden="true">↗</span>
+        <span class="dock-label">links</span>
+      </button>
+    </div>
+  </div>
+</nav>

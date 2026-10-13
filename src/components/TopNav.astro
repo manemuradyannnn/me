@@ -1,0 +1,15 @@
+---
+import { site } from '../data/site';
+---
+
+<nav class="top-nav">
+  <a href="#welcome" class="nav-left" data-panel-link="welcome" aria-label="Back to welcome">
+    <img src="/assets/images/logo.png" alt="" class="nav-logo" width="40" height="40" />
+    <span class="nav-name">{site.name}</span>
+  </a>
+  <div class="nav-right">
+    <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" class="nav-icon">LinkedIn</a>
+    <a href={`mailto:${site.email}`} class="nav-icon">Email</a>
+    <a href={site.links.resume} target="_blank" rel="noopener noreferrer" class="nav-icon">Resume</a>
+  </div>
+</nav>

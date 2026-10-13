@@ -1,0 +1,19 @@
+---
+import Case from '../../layouts/Case.astro';
+import '../../styles/reel.css';
+import '../../styles/cases/polimeter.css';
+import html from '../../case-html/polimeter.html?raw';
+---
+
+<Case
+  title="Cindy Ly | Polimeter"
+  description="A civic accountability platform that shows whether governing parties keep their campaign promises. I led the rebuild across desktop, tablet, and mobile."
+>
+  <Fragment set:html={html} />
+</Case>
+
+<script>
+  import { initReels } from '../../scripts/reel.js';
+  import '../../scripts/cases/polimeter.js';
+  initReels();
+</script>

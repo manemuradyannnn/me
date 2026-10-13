@@ -1,0 +1,16 @@
+---
+import Case from '../../layouts/Case.astro';
+import '../../styles/cases/neuralyfe.css';
+import html from '../../case-html/neuralyfe.html?raw';
+---
+
+<Case
+  title="Cindy Ly | NeuraLyfe"
+  description="A wearable sensor and interface that makes CTE, football's invisible brain trauma, measurable in real time. 1st place of 690 teams at FigBuild 2026."
+>
+  <Fragment set:html={html} />
+</Case>
+
+<script>
+  import '../../scripts/cases/neuralyfe.js';
+</script>

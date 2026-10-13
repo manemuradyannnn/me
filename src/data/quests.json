@@ -1,0 +1,142 @@
+{
+  "1": {
+    "src": "/assets/images/lamp_off.webp",
+    "size": [
+      1850,
+      1850
+    ],
+    "title": "lamp.3d",
+    "name": "Mangosteen Lamp",
+    "tools": "Rhino, 3D Printer",
+    "desc": "An original lamp designed by yours truly. (˶ᵔ ᵕ ᵔ˶)<br><br>Modelled after one of my favourite fruits, the mangosteen. Can't find them fresh here, so I made one that lasts.<br><br>3D printed with an off-white matte PLA for a ceramic effect.",
+    "gallery": [
+      "/assets/images/lamp_off.webp",
+      "/assets/images/lamp_thumbnail.webp",
+      "/assets/images/rhino_lamp.webp"
+    ]
+  },
+  "2": {
+    "src": "/assets/images/nimbus_demo_web.mp4",
+    "size": [
+      710,
+      1538
+    ],
+    "title": "nimbus.ai",
+    "name": "Nimbus",
+    "phone": true,
+    "tools": "Claude Code",
+    "desc": "An AI weather companion built for Seattle. Nimbus reads the forecast, picks your outfit and dresses a husky avatar to match. From daily check-ins, it learns how each day felt and adapts its picks to fit you.<br><br><span style=\"opacity: 0.4;\">Made in collaboration with Josephine Waliman.</span>"
+  },
+  "3": {
+    "src": "/assets/images/cookies.webp",
+    "size": [
+      1700,
+      2200
+    ],
+    "title": "cookies.pdf",
+    "name": "The Way the Cookie Crumbles",
+    "tools": "Illustrator, Figma",
+    "desc": "I love baking so here's an infographic on the science behind baking cookies!<br><br>nom nom nom 🍪"
+  },
+  "5": {
+    "src": "/assets/images/handbag_thumbnail.webp",
+    "size": [
+      2182,
+      2182
+    ],
+    "title": "handbag.3d",
+    "name": "Prosperity Bag",
+    "tools": "Rhino, Bambu Labs",
+    "desc": "Inspired by Loewe's anagram inflated basket bag, I created my own version using the Japanese Shippo pattern for the shell. The interlocking circles symbolize harmony, prosperity, and the infinite connections between people.<br><br>3D printed shell, hand-sewn pouch.",
+    "gallery": [
+      "/assets/images/handbag_thumbnail.webp",
+      "/assets/images/handbag.webp",
+      "/assets/images/print_bag.webp",
+      "/assets/images/rhino_bag.webp"
+    ]
+  },
+  "6": {
+    "src": "/assets/images/wings_showcase.mp4",
+    "size": [
+      1280,
+      720
+    ],
+    "title": "chrysalis.3d",
+    "name": "Chrysalis",
+    "tools": "Womp 3D",
+    "desc": "I don't leave the house without my headphones. So, I decided to give them a little makeover by 3D modelling a case inspired by the intricate wings of a butterfly 🦋<br><br><span style=\"opacity: 0.4;\">3D printing in progress...</span>",
+    "square": true,
+    "bleed": true
+  },
+  "7": {
+    "src": "/assets/tama_layers/tama_process_web.mp4",
+    "size": [
+      1280,
+      720
+    ],
+    "title": "tama.3d",
+    "name": "Tamagotchi",
+    "tools": "Womp 3D",
+    "desc": "modelling swim shady's home <3 based off an og character... iykyk",
+    "bleed": true
+  },
+  "8": {
+    "src": "/assets/images/config_recap_web.mp4",
+    "size": [
+      800,
+      1080
+    ],
+    "title": "config.mp4",
+    "name": "Config 2026 Recap",
+    "tools": "Figma Motion",
+    "desc": "My first time at Config! I had such a blast and got to take home so much free merch hehe :)",
+    "bleed": true
+  },
+  "9": {
+    "src": "/assets/images/Ra-View.mp4",
+    "size": [
+      556,
+      1204
+    ],
+    "title": "raview.app",
+    "name": "Ra~View",
+    "phone": true,
+    "tools": "Figma, Figma Motion",
+    "desc": "man, i just love ramen."
+  },
+  "10": {
+    "src": "/assets/images/mod_analytics.mp4",
+    "size": [
+      920,
+      720
+    ],
+    "title": "sales.app",
+    "name": "Analytics Dashboard",
+    "tools": "Figma, Figma Motion",
+    "desc": "E-commerce dashboard tracking sales and performance."
+  },
+  "11": {
+    "src": "/assets/images/mod_editor_web.mp4",
+    "size": [
+      1012,
+      720
+    ],
+    "title": "editor.app",
+    "name": "Merch Editor",
+    "tools": "Figma, Figma Motion",
+    "desc": "Feedback right on the merch design: click anywhere on the item to pin a comment."
+  },
+  "12": {
+    "src": "/assets/images/rediscover_web.mp4",
+    "size": [
+      698,
+      1520
+    ],
+    "title": "rediscover.app",
+    "name": "Rediscover",
+    "phone": true,
+    "outline": true,
+    "tools": "Claude Code",
+    "desc": "A Google Maps concept that resurfaces the places you saved but never got around to visiting (bc I need to optimize for eating out efficiently)."
+  }
+}

@@ -1,0 +1,44 @@
+---
+interface Props {
+  trigger?: 'hover' | 'manual';
+}
+const { trigger = 'hover' } = Astro.props;
+---
+
+<div class="rd-reel" data-trigger={trigger} aria-hidden="true">
+  <div class="rd-sky">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <filter id="rd-smoke" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.0022 0.005" numOctaves="3" seed="11" result="noise">
+          <animate attributeName="baseFrequency" values="0.0022 0.005;0.0027 0.0044;0.0019 0.0056;0.0025 0.0048;0.0022 0.005" dur="10s" repeatCount="indefinite"></animate>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="230" xChannelSelector="R" yChannelSelector="G">
+          <animate attributeName="scale" values="230;300;190;275;230" keyTimes="0;0.27;0.52;0.78;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" dur="4.3s" repeatCount="indefinite"></animate>
+        </feDisplacementMap>
+      </filter>
+    </svg>
+    <span class="rd-wisp rd-wisp--a"></span>
+    <span class="rd-wisp rd-wisp--b"></span>
+  </div>
+  <div class="rd-scene">
+    <div class="rd-grain"></div>
+    <div class="rd-dusk"></div>
+    <div class="rd-composer">
+      <span class="rd-field">
+        <span class="rd-placeholder">What's on your mind?</span>
+        <span class="rd-typed">
+          <span class="rd-typed-vis"></span>
+          <span class="rd-caret"></span>
+          <span class="rd-typed-rest">hi, first time posting!</span>
+        </span>
+      </span>
+      <span class="rd-post-slot"><span class="rd-post-track"><span class="rd-post">Post</span></span></span>
+    </div>
+    <div class="rd-star">
+      <span class="rd-comet"><span class="rd-streak"></span><span class="rd-dot"></span></span>
+      <span class="rd-burst"></span>
+      <svg class="rd-star-glyph" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.55 6.9 4.55 10.9 12 12-7.45 1.1-11.45 5.1-12 12-.55-6.9-4.55-10.9-12-12C7.45 10.9 11.45 6.9 12 0z"></path></svg>
+      <span class="rd-you">You</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,928 @@
+<!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
+<nav class="cs-nav">
+  <a href="/" class="cs-nav-left" aria-label="Home">
+    <img src="/assets/images/logo.png" alt="" class="cs-nav-logo">
+  </a>
+</nav>
+<!-- ═══ SIDENAV ═════════════════════════════════════════════════════ -->
+<aside class="cs-sidenav" aria-label="Case study sections">
+  <a href="/#works" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6">
+      </polyline>
+    </svg>
+    Back
+  </a>
+  <nav class="cs-side-nav">
+    <a href="#tldr" class="cs-side-link" data-target="tldr">TL;DR</a>
+    <a href="#background" class="cs-side-link" data-target="background">Background</a>
+    <a href="#problem" class="cs-side-link" data-target="problem">Problem</a>
+    <a href="#research" class="cs-side-link" data-target="research">Research</a>
+    <a href="#process" class="cs-side-link" data-target="process">Process</a>
+    <a href="#testing" class="cs-side-link" data-target="testing">Testing</a>
+    <a href="#final-product" class="cs-side-link" data-target="final-product">Final Product</a>
+    <a href="#impact" class="cs-side-link" data-target="impact">Impact</a>
+    <a href="#reflections" class="cs-side-link" data-target="reflections">Reflections</a>
+  </nav>
+</aside>
+<main class="cs" id="cs-content">
+  <!-- ═══ HERO VISUAL: the works-card reel, pinned behind ══════════ -->
+  <div class="cs-hero-visual" aria-hidden="true">
+    <div class="cs-hero-reel">
+      <div class="rd-reel" data-trigger="manual" aria-hidden="true">
+        <!-- the sky: two gradient layers (::before/::after) and two wisps, pushed through an SVG
+        displacement filter, so the puffs and veils come out ragged like smoke and morph as
+        they drift under the fixed noise field -->
+        <div class="rd-sky">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <filter id="rd-smoke" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+              <feTurbulence type="fractalNoise" baseFrequency="0.0022 0.005" numOctaves="3" seed="11" result="noise">
+                <animate attributeName="baseFrequency" values="0.0022 0.005;0.0027 0.0044;0.0019 0.0056;0.0025 0.0048;0.0022 0.005" dur="10s" repeatCount="indefinite">
+                </animate>
+              </feTurbulence>
+              <!-- the displacement swells and settles, so the smoke's edges roll like waves -->
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="230" xChannelSelector="R" yChannelSelector="G">
+                <animate attributeName="scale" values="230;300;190;275;230" keyTimes="0;0.27;0.52;0.78;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" dur="4.3s" repeatCount="indefinite">
+                </animate>
+              </feDisplacementMap>
+            </filter>
+          </svg>
+          <span class="rd-wisp rd-wisp--a">
+          </span>
+          <span class="rd-wisp rd-wisp--b">
+          </span>
+        </div>
+        <!-- the message sits in .rd-typed-rest (hidden, so the row keeps its final width); the
+        script below moves it into .rd-typed-vis a character at a time, in step with the CSS -->
+        <div class="rd-scene">
+          <div class="rd-grain">
+          </div>
+          <div class="rd-dusk">
+          </div>
+          <div class="rd-composer">
+            <span class="rd-field">
+              <span class="rd-placeholder">What's on your mind?</span>
+              <span class="rd-typed">
+                <span class="rd-typed-vis">
+                </span>
+                <span class="rd-caret">
+                </span>
+                <span class="rd-typed-rest">hi, first time posting!</span>
+              </span>
+            </span>
+            <span class="rd-post-slot">
+              <span class="rd-post-track">
+                <span class="rd-post">Post</span>
+              </span>
+            </span>
+          </div>
+          <div class="rd-star">
+            <span class="rd-comet">
+              <span class="rd-streak">
+              </span>
+              <span class="rd-dot">
+              </span>
+            </span>
+            <span class="rd-burst">
+            </span>
+            <svg class="rd-star-glyph" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 0c.55 6.9 4.55 10.9 12 12-7.45 1.1-11.45 5.1-12 12-.55-6.9-4.55-10.9-12-12C7.45 10.9 11.45 6.9 12 0z">
+              </path>
+            </svg>
+            <span class="rd-you">You</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cs-scroll-body">
+    <!-- ═══ HERO ═════════════════════════════════════════════════════ -->
+    <header class="cs-hero">
+      <p class="cs-company">
+        <img src="/assets/images/reddit_icon.png" alt="" class="cs-company-icon">
+        Reddit
+      </p>
+      <h1 class="cs-h1">Showing Signs of Life</h1>
+      <ul class="cs-tags">
+        <li class="cs-tag--building">
+          <span class="building-dot" aria-hidden="true">
+          </span>Building</li>
+          <li>UX Research</li>
+          <li>Consumer Social</li>
+          <li>Mobile</li>
+        </ul>
+      </header>
+      <!-- ═══ TL;DR ════════════════════════════════════════════════════ -->
+      <section class="cs-section" id="tldr">
+        <p class="cs-section-label">TL;DR</p>
+        <p class="cs-body">
+          Most Redditors drop in, grab an answer, and leave because posting feels high-stakes and the sense of community is invisible. We designed two lightweight ways to feel present among others and to contribute without pressure.
+        </p>
+        <p class="cs-body">
+          I worked across research, ideation, and design, then led the build: pulling everyone&rsquo;s pieces into one prototype and iterating on it through user testing.
+        </p>
+        <dl class="cs-meta">
+          <div class="cs-meta-row">
+            <dt>My Role</dt>
+            <dd>Product Designer<br>Prototype Lead</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Timeline</dt>
+            <dd>Feb 2026 &ndash; Present</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Team</dt>
+            <dd>Cindy Ly<br>Emily Wong<br>Jiayi Sun<br>Keila Braden</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Reddit Partners</dt>
+            <dd>Sr. UX Researcher<br>Staff Product Designer<br>Community Support Specialist</dd>
+          </div>
+        </dl>
+      </section>
+      <!-- ═══ BACKGROUND ═══════════════════════════════════════════════ -->
+      <section class="cs-section" id="background">
+        <p class="cs-section-label">Background</p>
+        <h2 class="cs-h2">Belonging is a retention problem</h2>
+        <div class="cs-lurkers" id="crowd-stat">
+          <!-- a hundred people beside the paragraph, all orange; on scroll-in the ninety lurkers
+          fade to grey (quiet, unseen) and only the ten who post stay lit -->
+          <div class="cs-crowd" aria-hidden="true">
+            <i style="--d:154ms">
+            </i>
+            <i style="--d:126ms">
+            </i>
+            <i style="--d:294ms">
+            </i>
+            <i class="on" style="--d:658ms">
+            </i>
+            <i style="--d:1204ms">
+            </i>
+            <i style="--d:966ms">
+            </i>
+            <i style="--d:1330ms">
+            </i>
+            <i style="--d:1246ms">
+            </i>
+            <i style="--d:1148ms">
+            </i>
+            <i style="--d:1316ms">
+            </i>
+            <i style="--d:364ms">
+            </i>
+            <i style="--d:1190ms">
+            </i>
+            <i style="--d:1288ms">
+            </i>
+            <i style="--d:630ms">
+            </i>
+            <i style="--d:336ms">
+            </i>
+            <i style="--d:1050ms">
+            </i>
+            <i style="--d:392ms">
+            </i>
+            <i class="on" style="--d:952ms">
+            </i>
+            <i style="--d:910ms">
+            </i>
+            <i style="--d:1372ms">
+            </i>
+            <i style="--d:560ms">
+            </i>
+            <i class="on" style="--d:84ms">
+            </i>
+            <i style="--d:140ms">
+            </i>
+            <i style="--d:742ms">
+            </i>
+            <i style="--d:196ms">
+            </i>
+            <i style="--d:14ms">
+            </i>
+            <i style="--d:224ms">
+            </i>
+            <i style="--d:1218ms">
+            </i>
+            <i style="--d:1036ms">
+            </i>
+            <i style="--d:546ms">
+            </i>
+            <i style="--d:1134ms">
+            </i>
+            <i style="--d:616ms">
+            </i>
+            <i style="--d:378ms">
+            </i>
+            <i style="--d:0ms">
+            </i>
+            <i style="--d:588ms">
+            </i>
+            <i style="--d:868ms">
+            </i>
+            <i style="--d:784ms">
+            </i>
+            <i style="--d:938ms">
+            </i>
+            <i class="on" style="--d:322ms">
+            </i>
+            <i style="--d:882ms">
+            </i>
+            <i style="--d:770ms">
+            </i>
+            <i style="--d:1386ms">
+            </i>
+            <i style="--d:448ms">
+            </i>
+            <i style="--d:840ms">
+            </i>
+            <i style="--d:238ms">
+            </i>
+            <i class="on" style="--d:700ms">
+            </i>
+            <i style="--d:1274ms">
+            </i>
+            <i style="--d:280ms">
+            </i>
+            <i style="--d:350ms">
+            </i>
+            <i style="--d:210ms">
+            </i>
+            <i class="on" style="--d:1358ms">
+            </i>
+            <i style="--d:308ms">
+            </i>
+            <i style="--d:854ms">
+            </i>
+            <i style="--d:1162ms">
+            </i>
+            <i style="--d:1092ms">
+            </i>
+            <i style="--d:1176ms">
+            </i>
+            <i style="--d:672ms">
+            </i>
+            <i style="--d:532ms">
+            </i>
+            <i style="--d:728ms">
+            </i>
+            <i style="--d:462ms">
+            </i>
+            <i style="--d:602ms">
+            </i>
+            <i style="--d:168ms">
+            </i>
+            <i style="--d:714ms">
+            </i>
+            <i style="--d:644ms">
+            </i>
+            <i style="--d:1232ms">
+            </i>
+            <i style="--d:420ms">
+            </i>
+            <i style="--d:504ms">
+            </i>
+            <i style="--d:798ms">
+            </i>
+            <i style="--d:1302ms">
+            </i>
+            <i class="on" style="--d:434ms">
+            </i>
+            <i style="--d:1106ms">
+            </i>
+            <i style="--d:812ms">
+            </i>
+            <i style="--d:1064ms">
+            </i>
+            <i style="--d:182ms">
+            </i>
+            <i class="on" style="--d:1260ms">
+            </i>
+            <i style="--d:896ms">
+            </i>
+            <i style="--d:252ms">
+            </i>
+            <i style="--d:1022ms">
+            </i>
+            <i style="--d:56ms">
+            </i>
+            <i style="--d:266ms">
+            </i>
+            <i style="--d:826ms">
+            </i>
+            <i style="--d:70ms">
+            </i>
+            <i class="on" style="--d:112ms">
+            </i>
+            <i style="--d:1344ms">
+            </i>
+            <i style="--d:42ms">
+            </i>
+            <i style="--d:1120ms">
+            </i>
+            <i style="--d:686ms">
+            </i>
+            <i style="--d:574ms">
+            </i>
+            <i style="--d:476ms">
+            </i>
+            <i style="--d:1078ms">
+            </i>
+            <i style="--d:980ms">
+            </i>
+            <i style="--d:518ms">
+            </i>
+            <i style="--d:756ms">
+            </i>
+            <i style="--d:98ms">
+            </i>
+            <i style="--d:406ms">
+            </i>
+            <i style="--d:994ms">
+            </i>
+            <i class="on" style="--d:924ms">
+            </i>
+            <i style="--d:1008ms">
+            </i>
+            <i style="--d:490ms">
+            </i>
+            <i style="--d:28ms">
+            </i>
+          </div>
+          <p class="cs-body">
+            Reddit partnered with our capstone team to study how Gen Z users find community. Participation is the engine of the business, supplying the content and turning visitors into users who stay. Yet over <strong>90% of Redditors are lurkers.</strong>
+          </p>
+        </div>
+      </section>
+      <!-- ═══ PROBLEM ══════════════════════════════════════════════════ -->
+      <section class="cs-section" id="problem">
+        <p class="cs-section-label">Problem</p>
+        <h2 class="cs-h2">Easy to consume, hard to belong to</h2>
+        <p class="cs-body">
+          People treat Reddit like a search engine, so we set out to understand what stands between showing up and joining in.
+        </p>
+        <div class="cs-brief cs-brief--northstar">
+          <p class="cs-brief-label">
+            <svg class="cs-brief-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>Our North Star</p>
+            <p class="cs-brief-text">How do we lower the stakes of participating, and make the presence of others felt, so people can move from lurking to belonging?</p>
+          </div>
+        </section>
+        <!-- ═══ RESEARCH ═════════════════════════════════════════════════ -->
+        <section class="cs-section" id="research">
+          <p class="cs-section-label">Research</p>
+          <h2 class="cs-h2">What a third space needs</h2>
+          <!-- methods live in the intro sentence -->
+          <p class="cs-body">
+            We looked for belonging where it already exists: 8 in-depth interviews with Redditors who were also in other online communities and in-person third spaces, plus Reddit&rsquo;s own internal research and a competitive read of Discord.
+          </p>
+          <div class="cs-quote-card">
+            <blockquote class="cs-pullquote">&ldquo;I like the idea of the community, people making friends, joining in on certain topics. It&rsquo;s just my insecurities would get the better of me if I were to get downvoted.&rdquo;</blockquote>
+            <span class="cs-note-source">&mdash; P1</span>
+          </div>
+          <h3 class="cs-subhead">Key insights</h3>
+          <!-- the findings, each boxed with the piece of Reddit UI it came from: an
+          isolated snapshot on the left, the insight beside it. The snapshots reuse
+          the .cs-post-* drawing. -->
+          <div class="cs-insight-stack">
+            <div class="cs-insight-box">
+              <div class="cs-insight-snap" aria-hidden="true">
+                <div class="cs-post-actions">
+                  <span class="cs-post-vote">
+                    <svg class="cs-post-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                      <path d="M12 4l7 7h-4v9H9v-9H5z">
+                      </path>
+                    </svg>
+                    <span class="cs-post-score">&minus;42</span>
+                    <svg class="cs-post-arrow cs-post-arrow--down is-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                      <path d="M12 4l7 7h-4v9H9v-9H5z">
+                      </path>
+                    </svg>
+                  </span>
+                  <span class="cs-post-chip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z">
+                      </path>
+                    </svg>18</span>
+                  </div>
+                </div>
+                <div class="cs-insight-item">
+                  <p class="cs-insight-label">Posting feels vulnerable</p>
+                  <p class="cs-insight-desc">Posting is the only way in, and every post is public, permanent, scored.</p>
+                </div>
+              </div>
+              <div class="cs-insight-box">
+                <div class="cs-insight-snap" aria-hidden="true">
+                  <div class="cs-post-removed">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10">
+                      </circle>
+                      <line x1="4.9" y1="4.9" x2="19.1" y2="19.1">
+                      </line>
+                    </svg>
+                    <span>Sorry, this post has been removed by the moderators.</span>
+                  </div>
+                </div>
+                <div class="cs-insight-item">
+                  <p class="cs-insight-label">The rules gatekeep participation</p>
+                  <p class="cs-insight-desc">Every subreddit has its own rules to learn, and removals feel arbitrary.</p>
+                </div>
+              </div>
+              <div class="cs-insight-box">
+                <div class="cs-insight-snap" aria-hidden="true">
+                  <div class="cs-post-head">
+                    <img class="cs-post-avatar" src="/assets/reddit/snoo_avatar.png" alt="" width="36" height="36">
+                    <span class="cs-post-meta-user">u/anon_2291</span>
+                  </div>
+                </div>
+                <div class="cs-insight-item">
+                  <p class="cs-insight-label">Nobody becomes a familiar face</p>
+                  <p class="cs-insight-desc">Pseudonymity is prized, but affinity grows from seeing the same people.</p>
+                </div>
+              </div>
+              <div class="cs-insight-box">
+                <div class="cs-insight-snap" aria-hidden="true">
+                  <img class="cs-discord-logo" src="/assets/reddit/discord_logo.webp" alt="" width="68" height="68">
+                </div>
+                <div class="cs-insight-item">
+                  <p class="cs-insight-label">Discord fills the gap</p>
+                  <p class="cs-insight-desc">Most named it as their hub: more personal and easier to be casual.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ═══ PROCESS ══════════════════════════════════════════════════ -->
+          <section class="cs-section" id="process">
+            <p class="cs-section-label">Process</p>
+            <h2 class="cs-h2">Designing inside a wicked problem</h2>
+            <p class="cs-body">
+              Lurkers, posters, and moderators need different things, so any fix for one costs the others. Each decision below is a trade-off, made with its cost in view.
+            </p>
+            <!-- the decisions, in rough order, with the tensions woven into the steps they shaped -->
+            <div class="cs-step">
+              <span class="cs-step-num">01</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">Pivoting from arrival to belonging</h3>
+                <p class="cs-body">
+                  We initially assumed belonging was an onboarding problem with people not discovering subreddits of interest. Instead, research pointed to social stakes. So we re-scoped midway to prioritize psychological safety.
+                </p>
+                <!-- Redditors on lurking, in their own words: three crops of a real r/AskReddit
+                thread, the question top-left and two replies naming the social stakes -->
+                <figure class="cs-thread-fig">
+                  <div class="cs-thread" role="img" aria-label="Reddit post in r/AskReddit, 12 years ago: Lurkers of Reddit, why do you lurk? 7k upvotes, 6.6k comments. Two replies: pattymea, My internet social skills are lacking sometimes, 1,780 upvotes. BioShock_Girl, Talking on the Internet is scary, 741 upvotes.">
+                    <img class="cs-thread-tile cs-thread-tile--q" src="/assets/reddit/lurk-post.png" alt="" width="900" height="140" loading="lazy">
+                    <img class="cs-thread-tile cs-thread-tile--r1" src="/assets/reddit/lurk-reply-1.png" alt="" width="1283" height="292" loading="lazy">
+                    <img class="cs-thread-tile cs-thread-tile--r2" src="/assets/reddit/lurk-reply-2.png" alt="" width="1234" height="292" loading="lazy">
+                  </div>
+                  <figcaption class="cs-caption cs-thread-cap">r/AskReddit thread</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="cs-step-num">02</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">Widening what counts as participation</h3>
+                <p class="cs-body">
+                  The assumed goal would be to convert lurkers into posters, but lurkers make up most of Reddit and matter as much as those who post. We decided to design a belonging that didn&rsquo;t require contributing content.
+                </p>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="cs-step-num">03</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">Breaking Reddit norms on purpose</h3>
+                <p class="cs-body">
+                  Siloed sessions, votes and comments, and permanence were where research found friction, so we deliberately designed outside them.
+                </p>
+                <!-- the three norms, each with the piece of UI that changed, drawn in CSS after
+                the prototype (kept as drawings by choice: crisp at any size, on the page's type) -->
+                <div class="cs-norms">
+                  <div class="cs-norm">
+                    <div class="cs-norm-draw" aria-hidden="true">
+                      <span class="cs-norm-presence">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z">
+                          </path>
+                        </svg>14 here<svg class="cs-norm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 6 15 12 9 18">
+                        </polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="cs-norm-text">
+                    <p class="cs-norm-kicker">See who else is here</p>
+                    <p class="cs-norm-cap">A live count of people in the subreddit right now, so no session feels solo.</p>
+                  </div>
+                </div>
+                <div class="cs-norm">
+                  <div class="cs-norm-draw" aria-hidden="true">
+                    <span class="cs-norm-react is-on">
+                      <span class="cs-norm-emoji">&#128557;</span>23</span>
+                      <span class="cs-norm-react">
+                        <span class="cs-norm-emoji">&#9749;</span>8</span>
+                        <span class="cs-norm-react cs-norm-react--add">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18.97 12.3A8 8 0 1 1 10.3 5.03">
+                            </path>
+                            <circle cx="8.3" cy="11.6" r="0.9" fill="currentColor" stroke="none">
+                            </circle>
+                            <circle cx="13.7" cy="11.6" r="0.9" fill="currentColor" stroke="none">
+                            </circle>
+                            <path d="M7.6 15.4a4.4 4.4 0 0 0 6.8 0">
+                            </path>
+                            <line x1="18.5" y1="2.5" x2="18.5" y2="8.5">
+                            </line>
+                            <line x1="15.5" y1="5.5" x2="21.5" y2="5.5">
+                            </line>
+                          </svg>
+                        </span>
+                      </div>
+                      <div class="cs-norm-text">
+                        <p class="cs-norm-kicker">Reacting as participation</p>
+                        <p class="cs-norm-cap">Reactions give more nuance than a binary vote and feel less pressure than a thread.</p>
+                      </div>
+                    </div>
+                    <div class="cs-norm">
+                      <div class="cs-norm-draw" aria-hidden="true">
+                        <span class="cs-norm-lasts">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6.5 3h11v2.4c0 2.7-4.4 4.6-4.4 6.6s4.4 3.9 4.4 6.6V21h-11v-2.4c0-2.7 4.4-4.6 4.4-6.6S6.5 8.1 6.5 5.4V3z">
+                            </path>
+                          </svg>Lasts 24 hours.</span>
+                        </div>
+                        <div class="cs-norm-text">
+                          <p class="cs-norm-kicker">No permanent record</p>
+                          <p class="cs-norm-cap">What you share expires in a day, so contributing feels casual.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-step">
+                  <span class="cs-step-num">04</span>
+                  <div class="cs-step-body">
+                    <h3 class="cs-h3">Respecting Reddit&rsquo;s constraints</h3>
+                    <p class="cs-body">
+                      Technical feasibility shaped our ideas. We committed early to Devvit, Reddit&rsquo;s platform for apps that run natively inside communities, and that set which concept we'd build to ship and which to stress-test.
+                    </p>
+                    <!-- the ideation board: the two bets as yellow stickies, a FigJam-style comment from
+                    the team pinned over each one's top-right corner -->
+                    <div class="cs-board" role="img" aria-label="An ideation board with two yellow stickies. Thoughts: a lighter, 24-hour post, with a Snoo Crew comment: build this to ship. Felt Presence: a live sense of who else is here, with a Snoo Crew comment: build this to stress-test a concept that re-imagines belonging.">
+                      <div class="cs-bet cs-bet--t">
+                        <p class="cs-bet-name">Thoughts</p>
+                        <p class="cs-bet-what">A lighter, 24-hour post where people react instead of vote or comment.</p>
+                      </div>
+                      <div class="cs-note cs-note--t">
+                        <span class="cs-note-avatar" aria-hidden="true">S</span>
+                        <div class="cs-note-body">
+                          <p class="cs-note-meta">
+                            <strong>Snoo Crew</strong>1 mo. ago</p>
+                            <p class="cs-note-text">Build this to ship</p>
+                          </div>
+                        </div>
+                        <div class="cs-bet cs-bet--fp">
+                          <p class="cs-bet-name">Felt Presence</p>
+                          <p class="cs-bet-what">A visualized sense of who else is online, so a subreddit feels like a third space.</p>
+                        </div>
+                        <div class="cs-note cs-note--fp">
+                          <span class="cs-note-avatar" aria-hidden="true">S</span>
+                          <div class="cs-note-body">
+                            <p class="cs-note-meta">
+                              <strong>Snoo Crew</strong>1 mo. ago</p>
+                              <p class="cs-note-text">Build this to stress-test a concept that re&#8209;imagines belonging</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs-step">
+                      <span class="cs-step-num">05</span>
+                      <div class="cs-step-body">
+                        <h3 class="cs-h3">Building mobile-first, where lurkers read</h3>
+                        <p class="cs-body">
+                          Leading the build, I set up a shared GitHub repo the team could build in together with Claude Code, then pulled everyone&rsquo;s pieces into one mobile-first prototype and pushed a fresh round to Vercel before every test session.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- ═══ TESTING ══════════════════════════════════════════════════ -->
+                  <section class="cs-section" id="testing">
+                    <p class="cs-section-label">Testing</p>
+                    <h2 class="cs-h2">Lower stakes landed, but presence needed a purpose</h2>
+                    <p class="cs-body">
+                      We put an early prototype in front of lurkers and posters. <strong>Every participant grasped both concepts on first contact</strong>, with no walkthrough.
+                    </p>
+                    <!-- the session: a remote testing call, participant blurred -->
+                    <figure class="cs-call">
+                      <img class="cs-call-img" src="/assets/reddit/testing_ss.jpg" alt="A remote testing session: the prototype shared on screen inside a phone frame, with the participant's video blurred and two team members' videos alongside." width="1472" height="848" loading="lazy">
+                      <figcaption class="cs-caption cs-call-cap">a remote testing session</figcaption>
+                    </figure>
+                    <h3 class="cs-subhead">Thoughts</h3>
+                    <div class="cs-iter-list">
+                      <div class="cs-iter-item">
+                        <p class="cs-card-label">
+                          <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9">
+                            </circle>
+                            <polyline points="12 7 12 12 15.5 14">
+                            </polyline>
+                          </svg>
+                          Ephemeral posts drew genuine curiosity
+                        </p>
+                        <p class="cs-card-body">Read as something Reddit lacks; comfort sharing one averaged <strong>4.7 out of 5</strong>.</p>
+                      </div>
+                      <div class="cs-iter-item">
+                        <p class="cs-card-label">
+                          <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2">
+                            </rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4">
+                            </path>
+                          </svg>
+                          The value of pseudonymity shaped every privacy question
+                        </p>
+                        <p class="cs-card-body">People asked whether a Thought would ever show on their profile.</p>
+                      </div>
+                    </div>
+                    <h3 class="cs-subhead">Felt Presence</h3>
+                    <div class="cs-iter-list">
+                      <div class="cs-iter-item">
+                        <p class="cs-card-label">
+                          <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="2">
+                            </circle>
+                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14">
+                            </path>
+                          </svg>
+                          Presence read as live interest, not a count
+                        </p>
+                        <p class="cs-card-body">Seeing where others were gathered told people what to read next in real time.</p>
+                      </div>
+                      <div class="cs-iter-item">
+                        <p class="cs-card-label">
+                          <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z">
+                            </path>
+                            <path d="M19 17l.7 2.1 2.1.7-2.1.7L19 22.6l-.7-2.1-2.1-.7 2.1-.7z">
+                            </path>
+                          </svg>
+                          Charm alone read as a gimmick
+                        </p>
+                        <p class="cs-card-body">Positive first look, but as pure ambience people weren&rsquo;t sure what it was for.</p>
+                      </div>
+                    </div>
+                    <div class="cs-quote-card">
+                      <blockquote class="cs-pullquote">&ldquo;I like the post-specific constellation, it&rsquo;s a fun visualizer. I just don&rsquo;t know how often I would be going to the main star page.&rdquo;</blockquote>
+                      <span class="cs-note-source">&mdash; P3, lurker</span>
+                    </div>
+                  </section>
+                  <!-- ═══ FINAL PRODUCT ════════════════════════════════════════════ -->
+                  <section class="cs-section" id="final-product">
+                    <p class="cs-section-label">Final Product</p>
+                    <h2 class="cs-h2">Two ways in for the people already there</h2>
+                    <!-- Thoughts -->
+                    <div class="cs-subsection">
+                      <h3 class="cs-h3">Thoughts</h3>
+                      <p class="cs-body">
+                        A short, casual post that lasts 24 hours and then disappears, the step between lurking and a full, permanent one.
+                      </p>
+                      <!-- walkthroughs: portrait iPhone recordings inside PhoneFrame, lazy-played on scroll -->
+                      <figure class="cs-stage">
+                        <div class="phone cs-flow-phone">
+                          <div class="phone-body">
+                            <div class="phone-screen">
+                              <video class="cs-flow-video" loop muted playsinline preload="none" data-lazy>
+                                <source src="/assets/reddit/thoughts_demo.mp4" type="video/mp4">
+                              </video>
+                              <div class="cs-replay">
+                                <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                                    </path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="phone-island" aria-hidden="true">
+                            </span>
+                          </div>
+                          <span class="phone-btn phone-btn--action" aria-hidden="true">
+                          </span>
+                          <span class="phone-btn phone-btn--vol-up" aria-hidden="true">
+                          </span>
+                          <span class="phone-btn phone-btn--vol-down" aria-hidden="true">
+                          </span>
+                          <span class="phone-btn phone-btn--power" aria-hidden="true">
+                          </span>
+                        </div>
+                      </figure>
+                      <p class="cs-body cs-body--note">
+                        <strong>Under the hood:</strong> Thoughts are comments in Reddit&rsquo;s data model, which keeps moderation tools working and the format native.
+                      </p>
+                      <div class="cs-flow">
+                        <p class="cs-flow-title">A continuous scroll of Thoughts</p>
+                        <p class="cs-flow-body">Posts sit in their own expandable horizontal row, separate from the feed.</p>
+                        <figure class="cs-stage">
+                          <div class="phone cs-flow-phone">
+                            <div class="phone-body">
+                              <div class="phone-screen">
+                                <video class="cs-flow-video" loop muted playsinline preload="none" data-lazy>
+                                  <source src="/assets/reddit/thoughts_scroll.mp4" type="video/mp4">
+                                </video>
+                                <div class="cs-replay">
+                                  <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                      <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                                      </path>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                              <span class="phone-island" aria-hidden="true">
+                              </span>
+                            </div>
+                            <span class="phone-btn phone-btn--action" aria-hidden="true">
+                            </span>
+                            <span class="phone-btn phone-btn--vol-up" aria-hidden="true">
+                            </span>
+                            <span class="phone-btn phone-btn--vol-down" aria-hidden="true">
+                            </span>
+                            <span class="phone-btn phone-btn--power" aria-hidden="true">
+                            </span>
+                          </div>
+                        </figure>
+                      </div>
+                      <p class="cs-body cs-body--note">
+                        <strong>What testing changed:</strong> the first version truncated posts, which raised the interaction cost of reading each one. We rebuilt them as full cards, so every post is readable and browsable.
+                      </p>
+                    </div>
+                    <!-- Felt Presence -->
+                    <div class="cs-subsection">
+                      <h3 class="cs-h3">Felt Presence</h3>
+                      <p class="cs-body">
+                        We wanted a subreddit&rsquo;s activity to be more than a number. Felt Presence turns that count into a room with members represented as glyphs gathered around posts.
+                      </p>
+                      <!-- Clip 1 (The room): entering Felt Presence, looking around the room, then navigating to a post.
+                      Clip 2 (Header and post): the other entry point, then going back into the Felt Presence page. -->
+                      <figure class="cs-stage">
+                        <div class="phone cs-flow-phone">
+                          <div class="phone-body">
+                            <div class="phone-screen">
+                              <video class="cs-flow-video" loop muted playsinline preload="none" data-lazy>
+                                <source src="/assets/reddit/presence_demo.mp4" type="video/mp4">
+                              </video>
+                              <div class="cs-replay">
+                                <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                                    </path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="phone-island" aria-hidden="true">
+                            </span>
+                          </div>
+                          <span class="phone-btn phone-btn--action" aria-hidden="true">
+                          </span>
+                          <span class="phone-btn phone-btn--vol-up" aria-hidden="true">
+                          </span>
+                          <span class="phone-btn phone-btn--vol-down" aria-hidden="true">
+                          </span>
+                          <span class="phone-btn phone-btn--power" aria-hidden="true">
+                          </span>
+                        </div>
+                      </figure>
+                      <p class="cs-body cs-body--note">
+                        <strong>Native to each community:</strong> the metaphor changes with the subreddit. In r/space (shown here) members are stars and a crowd is a constellation.
+                      </p>
+                      <div class="cs-flow">
+                        <p class="cs-flow-title">Placed where people already look</p>
+                        <p class="cs-flow-body">From the subreddit header and within any post.</p>
+                        <figure class="cs-stage">
+                          <div class="phone cs-flow-phone">
+                            <div class="phone-body">
+                              <div class="phone-screen">
+                                <video class="cs-flow-video" loop muted playsinline preload="none" data-lazy>
+                                  <source src="/assets/reddit/presence_second_entry.mp4" type="video/mp4">
+                                </video>
+                                <div class="cs-replay">
+                                  <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                      <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                                      </path>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                              <span class="phone-island" aria-hidden="true">
+                              </span>
+                            </div>
+                            <span class="phone-btn phone-btn--action" aria-hidden="true">
+                            </span>
+                            <span class="phone-btn phone-btn--vol-up" aria-hidden="true">
+                            </span>
+                            <span class="phone-btn phone-btn--vol-down" aria-hidden="true">
+                            </span>
+                            <span class="phone-btn phone-btn--power" aria-hidden="true">
+                            </span>
+                          </div>
+                        </figure>
+                      </div>
+                      <p class="cs-body cs-body--note">
+                        <strong>What testing changed:</strong> since presence mattered most around what people were reading, each cluster now doubles as navigation into its post.
+                      </p>
+                    </div>
+                  </section>
+                  <!-- ═══ IMPACT ═══════════════════════════════════════════════════ -->
+                  <section class="cs-section" id="impact">
+                    <p class="cs-section-label">Impact</p>
+                    <h2 class="cs-h2">Reddit loved it... time to build!</h2>
+                    <p class="cs-body">
+                      Both concepts went to our Reddit partners and they backed them. Our Community Support Specialist even wants Thoughts in the subreddit he moderates.
+                    </p>
+                    <p class="cs-body">
+                      Our next step is Devvit, Reddit&rsquo;s developer platform, where we&rsquo;ll bring Thoughts to life and pilot it in a real community. While Felt Presence drew plenty of love, it was scoped as a concept from the start, and a concept it shall stay.
+                    </p>
+                    <!-- the crew: our team and the Reddit partners on the final call -->
+                    <figure class="cs-call">
+                      <img class="cs-call-img" src="/assets/reddit/snoo_crew.png" alt="A video call grid of six people, the four-person capstone team and two Reddit partners, waving and giving thumbs up." width="2920" height="1338" loading="lazy">
+                      <figcaption class="cs-caption cs-call-cap">our awesome Reddit team</figcaption>
+                    </figure>
+                  </section>
+                  <!-- ═══ REFLECTIONS ══════════════════════════════════════════════ -->
+                  <section class="cs-section" id="reflections">
+                    <p class="cs-section-label">Reflections</p>
+                    <div class="cs-learnings">
+                      <div class="cs-learning">
+                        <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z">
+                          </path>
+                          <path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z">
+                          </path>
+                          <path d="M7 21h10">
+                          </path>
+                          <path d="M12 3v18">
+                          </path>
+                          <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2">
+                          </path>
+                        </svg>
+                        <h3 class="cs-h3">The trade-offs were the design</h3>
+                        <p class="cs-body">With lurkers, posters, mods, and the business all pulling in different directions, no perfect answer existed, so we learned to choose which tensions to hold. For example, Thoughts requires your handle to be shown for accountability and compliance with mod tools, but that means giving up complete anonymity. Our compromise was letting each Thought disappear after 24 hours.</p>
+                      </div>
+                      <div class="cs-learning">
+                        <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                          </path>
+                        </svg>
+                        <h3 class="cs-h3">Participation as more than just posting</h3>
+                        <p class="cs-body">We began by asking how Reddit could get more people to contribute, and ended somewhere wider. Reading, reacting, and simply being around are all ways of belonging, and almost none of them leave a trace. By designing for those quieter forms, <strong>people can feel like they belong before they ever post.</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- ═══ THANKS ══════════════════════════════════════════════════ -->
+                  <p class="cs-thanks">
+                    <em>thanks for reading</em>
+                    <span class="cs-thanks-kao">(✿・‿・)ノ゛</span>
+                  </p>
+                  <!-- ═══ NEXT CASE STUDIES ═══════════════════════════════════════ -->
+                  <section class="cs-next">
+                    <p class="cs-section-label cs-section-label--grey">Up next</p>
+                    <div class="cs-next-grid">
+                      <a href="/work/neuralyfe" class="cs-next-card cs-next-card--navy">
+                        <div class="cs-next-preview">
+                        </div>
+                        <div class="cs-next-meta">
+                          <div class="cs-next-meta-row">
+                            <p class="cs-next-company">
+                              <img src="/assets/images/figma_icon.png" alt="" class="cs-next-company-icon">
+                              FigBuild 2026
+                            </p>
+                            <span class="badge badge--on-light">&#127942; 1st Place</span>
+                          </div>
+                          <p class="cs-next-title">NeuraLyfe</p>
+                        </div>
+                      </a>
+                      <a href="/work/polimeter" class="cs-next-card cs-next-card--green">
+                        <div class="cs-next-preview">
+                        </div>
+                        <div class="cs-next-meta">
+                          <div class="cs-next-meta-row">
+                            <p class="cs-next-company">
+                              <img src="/assets/images/dsl_icon.png" alt="" class="cs-next-company-icon cs-next-company-icon--dsl">
+                              Digital Society Lab
+                            </p>
+                            <span class="badge badge--shipped">
+                              <span class="shipped-dot">
+                              </span>Shipped</span>
+                            </div>
+                            <p class="cs-next-title">Polimeter</p>
+                          </div>
+                        </a>
+                      </div>
+                    </section>
+                  </div>
+                </main>

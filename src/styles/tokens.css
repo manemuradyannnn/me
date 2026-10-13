@@ -1,0 +1,204 @@
+/* Shared color, type, and badge tokens. Edit these first. */
+@font-face {
+  font-family:EditorialNew;
+  src:url(/assets/fonts/EditorialNew-Regular.otf) format("opentype");
+  font-weight:400;
+  font-style:normal;
+}
+
+@font-face {
+  font-family:EditorialNew;
+  src:url(/assets/fonts/PPEditorialNew-Italic.otf) format("opentype");
+  font-weight:400;
+  font-style:italic;
+}
+
+:root {
+  --color-bg: #f7f7f5;
+  --color-sand: #faf8f3;
+  --color-green-bg: #e8f5f0;
+  --color-dark-navy: #0a0e1a;
+  --color-dark: #1a1a1a;
+  --color-label: #2D2D2D;
+  --Label: #2D2D2D;
+  --color-text: #404040;
+  --Text: #404040;
+  --color-ink: #1e1a15;
+  --color-muted: #5a5248;
+  --color-subtle: #9a8e80;
+  --Grey-Text: #666;
+  --color-grey-light: #8a8a8a;
+  --Gray-outline: #E9E9E9;
+  --color-card-text-light: #FFFFFF;
+  --color-shadow: #DEDEDE;
+  --color-shadow-strong: #D5D5D5;
+  --color-blue-card: #c8d9f0;
+  --color-blue-light: #e8f0ff;
+  --color-blue-folder: #c8dcf8;
+  --color-accent: #0066cc;
+  --color-blue-select: #0081F2;
+  --color-card-blue-bg: #2D5FA0;
+  --color-blue-overlay: rgba(60, 120, 180, .4);
+  --color-kitty-bg: #E9F5FF;
+  --color-sky: #a0d0f8;
+  --color-page-top: #d5e4f6;
+  --color-page: #e5eef9;
+  --color-page-end: #f2f7fc;
+  --color-paper-overlay: rgba(255, 255, 255, .5);
+  --color-surface: #ffffff;
+  --color-white: #ffffff;
+  --color-white-glass: rgba(255, 255, 255, .6);
+  --color-white-border: rgba(255, 255, 255, .8);
+  --color-grid-line: #EEEEEE;
+  --color-sand-border: rgba(30, 26, 21, .08);
+  --color-badge-ghost: rgba(255, 255, 255, .15);
+  --color-badge-ghost-text: rgba(255, 255, 255, .9);
+  --color-badge-light: rgba(30, 26, 21, .08);
+  --color-status-green: #22c55e;
+  --color-status-green-bg: rgba(34, 197, 94, .12);
+  --color-status-green-border: rgba(34, 197, 94, .3);
+  --color-badge-shipped-bg: rgba(34, 197, 94, .2);
+  --font-serif: "EditorialNew", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
+  --fs-quote: 18px;
+  --radius-card: 12px;
+  --radius-sm: 8px;
+  --radius-folder: 12px;
+}
+
+@media(min-width:1920px) {
+:root {
+  --fs-quote: 19px;
+}
+
+}
+
+@media(min-width:2400px) {
+:root {
+  --fs-quote: 22px;
+}
+
+}
+
+.badge--on-light,.badge--shipped,.badge--building,.cs-tags li {
+  border-radius:100px;
+  border:.5px solid var(--Gray-outline, #E9E9E9);
+  background:#ffffffd9;
+  backdrop-filter:blur(1.5px);
+  -webkit-backdrop-filter:blur(1.5px);
+  color:var(--color-muted);
+}
+
+.shipped-dot,.cs-shipped-dot {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--color-status-green, #22c55e);
+  animation:shipped-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes shipped-pulse {
+0%,to {
+  box-shadow:0 0 4px var(--color-status-green, #22c55e),0 0 7px #22c55e8c,0 0 12px #22c55e40;
+}
+
+50% {
+  box-shadow:0 0 6px var(--color-status-green, #22c55e),0 0 13px #22c55ee6,0 0 21px #22c55e80;
+}
+
+}
+
+.building-dot {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#fbbf24;
+  animation:building-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes building-pulse {
+0%,to {
+  box-shadow:0 0 3px #fbbf24,0 0 5px #fbbf2466,0 0 9px #fbbf242e;
+}
+
+50% {
+  box-shadow:0 0 5px #fbbf24,0 0 10px #fbbf24a6,0 0 16px #fbbf2459;
+}
+
+}
+
+.badge--on-light,.cs-tag--award {
+  position:relative;
+  overflow:hidden;
+}
+
+.badge--on-light:after,.cs-tag--award:after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(120deg,transparent 20%,rgba(255,215,0,.08) 38%,rgba(255,255,255,.3) 50%,rgba(255,215,0,.08) 62%,transparent 80%);
+  animation:badge-shimmer 9s ease-in-out infinite;
+}
+
+@keyframes badge-shimmer {
+0% {
+  left:-100%;
+}
+
+30% {
+  left:120%;
+}
+
+to {
+  left:120%;
+}
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+.badge--on-light:after,.cs-tag--award:after {
+  animation:none;
+}
+
+}
+
+.back-btn {
+  position:absolute;
+  bottom:100%;
+  left:0;
+  margin-bottom:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--font-mono);
+  font-size:14px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--Grey-Text);
+  text-decoration:none;
+  padding:8px 14px 8px 11px;
+  border-radius:100px;
+  border:1px solid var(--Grey-Text);
+  background:transparent;
+  transition:background .2s,color .2s,border-color .2s;
+}
+
+.back-btn:hover {
+  background:#0000000a;
+  color:var(--color-ink);
+  border-color:#8a8a8a;
+}
+
+@media(min-width:2400px) {
+.back-btn {
+  font-size:17px;
+  gap:8px;
+  margin-bottom:24px;
+}
+
+}

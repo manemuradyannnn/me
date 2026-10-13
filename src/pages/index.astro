@@ -1,0 +1,65 @@
+---
+import '../styles/tokens.css';
+import '../styles/home.css';
+import '../styles/reel.css';
+import TopNav from '../components/TopNav.astro';
+import Dock from '../components/Dock.astro';
+import Welcome from '../components/Welcome.astro';
+import Works from '../components/Works.astro';
+import Profile from '../components/Profile.astro';
+import Quests from '../components/Quests.astro';
+import { site } from '../data/site';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.title}</title>
+    <meta name="description" content={site.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600;700&family=Reddit+Sans:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <filter id="pixelate-emotion">
+          <feMorphology in="SourceGraphic" operator="erode" radius="0.45" result="slim"></feMorphology>
+          <feFlood x="1" y="1" height="1" width="1"></feFlood>
+          <feComposite width="2.5" height="2.5"></feComposite>
+          <feTile result="a"></feTile>
+          <feComposite in="slim" in2="a" operator="in"></feComposite>
+          <feMorphology operator="dilate" radius="0.9"></feMorphology>
+        </filter>
+        <filter id="pixelate-label">
+          <feFlood x="1" y="1" height="1" width="1"></feFlood>
+          <feComposite width="2" height="2"></feComposite>
+          <feTile result="a"></feTile>
+          <feComposite in="SourceGraphic" in2="a" operator="in"></feComposite>
+          <feMorphology operator="dilate" radius="0.425"></feMorphology>
+        </filter>
+      </defs>
+    </svg>
+    <TopNav />
+    <main class="main">
+      <Welcome />
+      <Works />
+      <Profile />
+      <Quests />
+      <p class="colophon colophon-credit">Built with Claude &amp; fueled by matcha</p>
+      <p class="colophon">Last updated {site.updated} <span>୨୧</span></p>
+    </main>
+    <Dock />
+    <script>
+      import '../scripts/home.js';
+    </script>
+  </body>
+</html>

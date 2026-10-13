@@ -1,0 +1,19 @@
+---
+import Case from '../../layouts/Case.astro';
+import '../../styles/reel.css';
+import '../../styles/cases/reddit.css';
+import html from '../../case-html/reddit.html?raw';
+---
+
+<Case
+  title="Cindy Ly | Reddit"
+  description="Most Redditors lurk because posting feels high-stakes. We designed two lightweight, mobile-first ways to feel present and contribute without pressure."
+>
+  <Fragment set:html={html} />
+</Case>
+
+<script>
+  import { initReels } from '../../scripts/reel.js';
+  import '../../scripts/cases/reddit.js';
+  initReels();
+</script>

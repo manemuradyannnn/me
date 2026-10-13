@@ -1,0 +1,1095 @@
+<!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
+<nav class="cs-nav">
+  <a href="/" class="cs-nav-left" aria-label="Home">
+    <img src="/assets/images/logo.png" alt="" class="cs-nav-logo">
+  </a>
+</nav>
+<!-- ═══ SIDENAV ═════════════════════════════════════════════════════ -->
+<aside class="cs-sidenav" aria-label="Case study sections">
+  <a href="/#works" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6">
+      </polyline>
+    </svg>
+    Back
+  </a>
+  <nav class="cs-side-nav">
+    <a href="#tldr" class="cs-side-link" data-target="tldr">TL;DR</a>
+    <a href="#background" class="cs-side-link" data-target="background">Background</a>
+    <a href="#problem" class="cs-side-link" data-target="problem">Problem</a>
+    <a href="#process" class="cs-side-link" data-target="process">Process</a>
+    <a href="#final-product" class="cs-side-link" data-target="final-product">Final Product</a>
+    <a href="#impact" class="cs-side-link" data-target="impact">Impact</a>
+    <a href="#reflections" class="cs-side-link" data-target="reflections">Reflections</a>
+  </nav>
+</aside>
+<main class="cs" id="cs-content">
+  <!-- ═══ HERO ═════════════════════════════════════════════════════ -->
+  <div class="cs-hero-visual" aria-hidden="true">
+    <img class="cs-hero-bg" src="/assets/polimeter/polimeter_site.png" alt="">
+    <img class="cs-hero-popup cs-hero-popup--status" src="/assets/polimeter/status_change.png" alt="">
+    <img class="cs-hero-popup cs-hero-popup--justification" src="/assets/polimeter/final_justification.png" alt="">
+  </div>
+  <div class="cs-scroll-body">
+    <header class="cs-hero">
+      <p class="cs-company">
+        <img src="/assets/images/dsl_icon.png" alt="" class="cs-company-icon">
+        Digital Society Lab
+      </p>
+      <h1 class="cs-h1">Polimeter</h1>
+      <ul class="cs-tags">
+        <li class="cs-tag--shipped">
+          <span class="cs-shipped-dot" aria-hidden="true">
+          </span>Shipped</li>
+          <li>Data Visualization</li>
+          <li>Responsive</li>
+          <li>Consumer Web</li>
+        </ul>
+      </header>
+      <!-- ═══ TL;DR ════════════════════════════════════════════════════ -->
+      <section class="cs-section" id="tldr">
+        <p class="cs-section-label">TL;DR</p>
+        <p class="cs-body">
+          Polimeter lets citizens and journalists check whether governing parties keep their campaign promises.
+        </p>
+        <p class="cs-body">
+          I led the end-to-end rebuild across desktop, tablet, and mobile, turning an expert research tool into something anyone can read at a glance. Shipped in 2026, it tracks 1,891 promises for 1,000+ monthly users.
+          <a href="https://polimeter.org/en" target="_blank" rel="noopener" class="cs-skip-btn cs-skip-btn--block">See the live site →</a>
+        </p>
+        <dl class="cs-meta">
+          <div class="cs-meta-row">
+            <dt>My Role</dt>
+            <dd>Solo Product Designer</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Timeline</dt>
+            <dd>2024–2025</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Team</dt>
+            <dd>Managing Director (project lead)<br>2 Software Engineers<br>2 Political Scientists (domain consultants)</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Tools</dt>
+            <dd>Figma</dd>
+          </div>
+        </dl>
+      </section>
+      <!-- ═══ BACKGROUND ═══════════════════════════════════════════════ -->
+      <section class="cs-section" id="background">
+        <p class="cs-section-label">Background</p>
+        <h2 class="cs-h2">A tool that outgrew its interface</h2>
+        <p class="cs-body">
+          Polimeter's interface hadn't kept pace with its growing audience or its 2011 mission of making dense political data trustworthy for non-experts. The Managing Director brought me in to lead the rebuild.
+        </p>
+        <!-- the old interfaces, looping (hers: replaced the 2011-2026 timeline,
+        which is parked in the CSS + script below in case it comes back) -->
+        <figure class="cs-oldui" style="margin: 28px 0 0;">
+          <video class="cs-oldui-video" width="1798" height="432" style="display: block; width: 100%; max-width: 100%; height: auto;" loop muted playsinline preload="none" data-lazy data-fallback="/assets/polimeter/old_polimeter_anim.webp" aria-label="Polimeter's previous interfaces">
+            <source src="/assets/polimeter/old_polimeter_web.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </section>
+      <!-- ═══ PROBLEM ══════════════════════════════════════════════════ -->
+      <section class="cs-section" id="problem">
+        <p class="cs-section-label">Problem</p>
+        <h2 class="cs-h2">Four problems across two audit tracks</h2>
+        <p class="cs-body">
+          I ran a design audit and a methodology consultation with domain experts in parallel. Both surfaced usability issues that were also misrepresentation problems. I also had to make sure the methodology stayed intact while simplifying the interface.
+        </p>
+        <div class="cs-audit">
+          <div class="cs-audit-img-wrap">
+            <picture>
+              <source srcset="/assets/polimeter/misleading_data.webp" type="image/webp">
+              <img src="/assets/polimeter/misleading_data.png" alt="" class="cs-audit-img" data-audit="1">
+            </picture>
+            <picture>
+              <source srcset="/assets/polimeter/tri_column.webp" type="image/webp">
+              <img src="/assets/polimeter/tri_column.png" alt="" class="cs-audit-img" data-audit="2">
+            </picture>
+            <picture>
+              <source srcset="/assets/polimeter/IA.webp" type="image/webp">
+              <img src="/assets/polimeter/IA.png" alt="" class="cs-audit-img" data-audit="3">
+            </picture>
+            <picture>
+              <source srcset="/assets/polimeter/mobile_old.webp" type="image/webp">
+              <img src="/assets/polimeter/mobile_old.png" alt="" class="cs-audit-img" data-audit="4">
+            </picture>
+          </div>
+          <p class="cs-audit-hint">Hover cards to explore</p>
+          <div class="cs-audit-items">
+            <button class="cs-audit-item" data-audit="1">
+              <span class="cs-audit-num">1</span>
+              <div class="cs-audit-content">
+                <strong>Misleading data visualization</strong>
+                <span>Chart aggregated across all terms, inflating or deflating performance.</span>
+              </div>
+            </button>
+            <button class="cs-audit-item" data-audit="2">
+              <span class="cs-audit-num">2</span>
+              <div class="cs-audit-content">
+                <strong>Information overload</strong>
+                <span>Tri-column layout scattered content, resulting in conflicting hierarchy.</span>
+              </div>
+            </button>
+            <button class="cs-audit-item" data-audit="3">
+              <span class="cs-audit-num">3</span>
+              <div class="cs-audit-content">
+                <strong>IA assumed expert users</strong>
+                <span>Structured around the research team's mental model, not the public's.</span>
+              </div>
+            </button>
+            <button class="cs-audit-item" data-audit="4">
+              <span class="cs-audit-num">4</span>
+              <div class="cs-audit-content">
+                <strong>Mobile experience didn't translate</strong>
+                <span>Layout lost hierarchy and navigability on smaller screens.</span>
+              </div>
+            </button>
+          </div>
+        </div>
+        <h3 class="cs-subhead">User patterns</h3>
+        <div class="cs-considerations">
+          <ul class="cs-consideration-list">
+            <li>
+              <svg class="cs-consideration-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z">
+                </path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z">
+                </path>
+              </svg>
+              <span>
+                <strong>Journalists</strong>
+                <span class="cs-inline-badge cs-inline-badge--green">Deep engagement</span>
+                <br>Researching specific promises, policy areas, or governments. Need access to evidence and full update histories.</span>
+              </li>
+              <li>
+                <svg class="cs-consideration-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+                  </path>
+                  <circle cx="9" cy="7" r="4">
+                  </circle>
+                </svg>
+                <span>
+                  <strong>Citizens</strong>
+                  <span class="cs-inline-badge cs-inline-badge--amber">Surface engagement</span>
+                  <br>Checking high-level political performance briefly, often without prior context.</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- ═══ DESIGN PROCESS ═══════════════════════════════════════════ -->
+          <section class="cs-section" id="process">
+            <p class="cs-section-label">Process</p>
+            <h2 class="cs-h2">Easy to scan and deep enough to trust</h2>
+            <div class="cs-step">
+              <span class="cs-step-num">01</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">Restructuring the information hierarchy</h3>
+                <p class="cs-body">
+                  On the Promise Tracker page, the tri-column layout gave overview data, promises, and filters equal weight, with no signal on what to look at first. Moving to single column sequences the page from broad context down to specific promises.
+                </p>
+                <div class="cs-hier">
+                  <div class="cs-hier-mockup" aria-hidden="true">
+                    <span class="cs-hier-scanner">
+                    </span>
+                    <div class="cs-hier-region">
+                      <div class="cs-hier-chips">
+                        <span class="cs-hier-chip">
+                        </span>
+                        <span class="cs-hier-chip cs-hier-chip--sm">
+                        </span>
+                      </div>
+                      <div class="cs-hier-stats">
+                        <span class="cs-hier-stat">
+                        </span>
+                        <span class="cs-hier-stat">
+                        </span>
+                        <span class="cs-hier-stat">
+                        </span>
+                      </div>
+                      <div class="cs-hier-segbar">
+                        <span class="cs-hier-seg cs-hier-seg--1">
+                        </span>
+                        <span class="cs-hier-seg cs-hier-seg--2">
+                        </span>
+                        <span class="cs-hier-seg cs-hier-seg--3">
+                        </span>
+                      </div>
+                    </div>
+                    <div class="cs-hier-region">
+                      <div class="cs-hier-pills">
+                        <span class="cs-hier-pill">
+                        </span>
+                        <span class="cs-hier-pill">
+                        </span>
+                        <span class="cs-hier-pill">
+                        </span>
+                      </div>
+                      <div class="cs-hier-chart">
+                        <span class="cs-hier-bar-1">
+                        </span>
+                        <span class="cs-hier-bar-2">
+                        </span>
+                        <span class="cs-hier-bar-3 cs-hier-bar--focus">
+                        </span>
+                        <span class="cs-hier-bar-4">
+                        </span>
+                        <span class="cs-hier-bar-5">
+                        </span>
+                      </div>
+                    </div>
+                    <div class="cs-hier-region">
+                      <span class="cs-hier-search">
+                      </span>
+                      <div class="cs-hier-controls">
+                        <span class="cs-hier-ctrl">
+                        </span>
+                        <span class="cs-hier-ctrl">
+                        </span>
+                      </div>
+                      <span class="cs-hier-row">
+                      </span>
+                      <span class="cs-hier-row cs-hier-row--focus">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="cs-hier-legend">
+                    <span class="cs-hier-marker" aria-hidden="true">
+                    </span>
+                    <div class="cs-hier-item">
+                      <p class="cs-hier-layer">Overview</p>
+                      <p class="cs-hier-desc">Jurisdiction, party, and tenure.</p>
+                    </div>
+                    <div class="cs-hier-item">
+                      <p class="cs-hier-layer">Promise breakdown</p>
+                      <p class="cs-hier-desc">Status chart with parliament, policy, and status filters.</p>
+                    </div>
+                    <div class="cs-hier-item">
+                      <p class="cs-hier-layer">Promise list</p>
+                      <p class="cs-hier-desc">The full list with search, sort, and group controls inline.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="cs-step-num">02</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">A chart that judges each term on its own</h3>
+                <p class="cs-body">
+                  The original chart conflated separate mandates into one record. A strong previous term inflated current performance, and a new term inherited promises that didn't belong to it.
+                </p>
+                <p class="cs-body">
+                  I explored three directions: segmented area charts, grouped bars, and stacked bars.
+                </p>
+                <img src="/assets/polimeter/graph_explorations.png" alt="Chart type explorations: segmented area, grouped bars, and stacked bars" class="cs-image cs-image--wide cs-image--bordered" loading="lazy">
+                <p class="cs-caption">early explorations</p>
+                <p class="cs-body">
+                  The breakthrough was <strong>reframing the axis</strong>. Instead of organizing around time, I used the five status categories, with parliament term as a filter. The chart had to show how a government is doing on its promises instantly.
+                </p>
+                <img src="/assets/polimeter/current_graph.png" alt="Final chart design: status categories as primary axis with parliament filter" class="cs-image cs-image--wide cs-image--bordered" loading="lazy">
+                <p class="cs-caption">final design</p>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="cs-step-num">03</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">The evidence trail, made readable</h3>
+                <p class="cs-body">
+                  Journalists needed to drill into individual promises for the full evidentiary trail, but the original page surfaced everything at once with no hierarchy.
+                </p>
+                <p class="cs-demo-hint">Click to expand / collapse</p>
+                <div class="cs-demo-toggle" role="button" tabindex="0" aria-label="Click to toggle expanded view">
+                  <img src="/assets/polimeter/collapsed.png" alt="Promise card collapsed" class="cs-demo-frame cs-demo-frame--collapsed">
+                  <img src="/assets/polimeter/expanded.png" alt="Promise card expanded" class="cs-demo-frame cs-demo-frame--expanded">
+                </div>
+                <p class="cs-body">
+                  The updated design keeps the vertical timeline (recent to oldest), but now has clear event markers and labeled blocks. Update cards are collapsed by default but expandable, supporting both <strong>quick scans and deep inspection</strong>.
+                </p>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="cs-step-num">04</span>
+              <div class="cs-step-body">
+                <h3 class="cs-h3">Expert testing for validation</h3>
+                <p class="cs-body">
+                  I ran usability sessions with 4 lab members. The expert sessions were most valuable, surfacing issues on the promise history page around timeline navigation.
+                </p>
+                <div class="cs-quote-card">
+                  <blockquote class="cs-pullquote">&ldquo;I thought the dates were newest at the top, but I couldn&rsquo;t tell if this was a new promise or an update to an old one.&rdquo;</blockquote>
+                  <span class="cs-note-source">&mdash; Domain expert, internal usability session</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ═══ FINAL PRODUCT ════════════════════════════════════════════ -->
+          <section class="cs-section" id="final-product">
+            <p class="cs-section-label">Final Product</p>
+            <h2 class="cs-h2">The structural shift, before and after</h2>
+            <div class="cs-subsection">
+              <h3 class="cs-h3">Homepage</h3>
+              <p class="cs-body">
+                Jurisdictions became the primary content, lightening the page. Each card shows the essential overview data. The rebuild also unifies the homepage with the rest of the site's design system.
+              </p>
+              <p class="cs-demo-hint">Toggle to compare</p>
+              <div class="cs-ba-frame">
+                <div class="cs-ba-tabs">
+                  <button class="cs-ba-tab is-active" data-ba="after">After</button>
+                  <button class="cs-ba-tab" data-ba="before">Before</button>
+                </div>
+                <div class="cs-ba-content">
+                  <video class="cs-ba-media cs-ba-media--after is-active" loop muted playsinline preload="none" data-lazy data-fallback="/assets/polimeter/homepage_demo_anim.webp">
+                    <source src="/assets/polimeter/homepage_demo.mp4" type="video/mp4">
+                  </video>
+                  <picture>
+                    <source srcset="/assets/polimeter/homepage_old.webp" type="image/webp">
+                    <img class="cs-ba-media cs-ba-media--before" src="/assets/polimeter/homepage_old.jpg" alt="Homepage before redesign">
+                  </picture>
+                  <div class="cs-replay">
+                    <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-subsection">
+              <h3 class="cs-h3">Promise Tracker</h3>
+              <p class="cs-body">
+                The page is now single-column. Filters were redesigned into two groups: three promise filter categories and sort/group controls.
+              </p>
+              <p class="cs-demo-hint">Toggle to compare</p>
+              <div class="cs-ba-frame">
+                <div class="cs-ba-tabs">
+                  <button class="cs-ba-tab is-active" data-ba="after">After</button>
+                  <button class="cs-ba-tab" data-ba="before">Before</button>
+                </div>
+                <div class="cs-ba-content">
+                  <video class="cs-ba-media cs-ba-media--after is-active" loop muted playsinline preload="none" data-lazy data-fallback="/assets/polimeter/tracker_demo_anim.webp">
+                    <source src="/assets/polimeter/tracker_demo.mp4" type="video/mp4">
+                  </video>
+                  <picture>
+                    <source srcset="/assets/polimeter/tri_column.webp" type="image/webp">
+                    <img class="cs-ba-media cs-ba-media--before" src="/assets/polimeter/tri_column.png" alt="Promise tracker before redesign">
+                  </picture>
+                  <div class="cs-replay">
+                    <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-subsection">
+              <h3 class="cs-h3">Promise History</h3>
+              <p class="cs-body">
+                The promise sits in a distinct card at the top, with a labeled timeline of updates below. Each event is labeled by type, and updates are collapsed by default.
+              </p>
+              <p class="cs-demo-hint">Toggle to compare</p>
+              <div class="cs-ba-frame">
+                <div class="cs-ba-tabs">
+                  <button class="cs-ba-tab is-active" data-ba="after">After</button>
+                  <button class="cs-ba-tab" data-ba="before">Before</button>
+                </div>
+                <div class="cs-ba-content">
+                  <video class="cs-ba-media cs-ba-media--after is-active" loop muted playsinline preload="none" data-lazy data-fallback="/assets/polimeter/history_demo_anim.webp">
+                    <source src="/assets/polimeter/history_demo.mp4" type="video/mp4">
+                  </video>
+                  <picture>
+                    <source srcset="/assets/polimeter/history_old.webp" type="image/webp">
+                    <img class="cs-ba-media cs-ba-media--before" src="/assets/polimeter/history_old.png" alt="Promise history before redesign">
+                  </picture>
+                  <div class="cs-replay">
+                    <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-subsection">
+              <h3 class="cs-h3">Design system</h3>
+              <p class="cs-body">
+                Built for consistency across pages, clean handoff, and future iteration.
+              </p>
+              <div class="cs-ds-preview">
+                <div class="cs-ds-section">
+                  <p class="cs-ds-label">Typefaces</p>
+                  <div class="cs-ds-type-row">
+                    <div class="cs-ds-type-card">
+                      <span class="cs-ds-type-sample" style="font-family: 'Poppins', sans-serif; font-weight: 600;">Aa</span>
+                      <span class="cs-ds-type-name">Poppins</span>
+                    </div>
+                    <div class="cs-ds-type-card">
+                      <span class="cs-ds-type-sample" style="font-family: 'Roboto', sans-serif; font-weight: 400;">Aa</span>
+                      <span class="cs-ds-type-name">Roboto</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-ds-section">
+                  <p class="cs-ds-label">Status Badges</p>
+                  <div class="cs-ds-badges">
+                    <img src="/assets/polimeter/in_progress.png" alt="In Progress badge" class="cs-ds-badge-img">
+                    <img src="/assets/polimeter/partially_kept.png" alt="Partially Kept badge" class="cs-ds-badge-img">
+                    <img src="/assets/polimeter/kept.png" alt="Kept badge" class="cs-ds-badge-img">
+                    <img src="/assets/polimeter/broken.png" alt="Broken badge" class="cs-ds-badge-img">
+                    <img src="/assets/polimeter/not_yet.png" alt="Not Yet Rated badge" class="cs-ds-badge-img cs-ds-badge-img--outline">
+                  </div>
+                </div>
+                <div class="cs-ds-section">
+                  <p class="cs-ds-label">Colors</p>
+                  <div class="cs-ds-color-scroll">
+                    <div class="cs-ds-color-track" aria-hidden="true">
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Text</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#000000;">
+                            </span>
+                            <span class="cs-ds-color-name">Pure Black</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#2A2A2A;">
+                            </span>
+                            <span class="cs-ds-color-name">Soft Black</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#4A4A4A;">
+                            </span>
+                            <span class="cs-ds-color-name">Dark Grey</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#9C9C9C;">
+                            </span>
+                            <span class="cs-ds-color-name">Stone</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#C8C8C8;">
+                            </span>
+                            <span class="cs-ds-color-name">Grey</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Background</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#EDF6F2;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Green</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFF2E3;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Orange</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFECE9;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Red</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFFCE5;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Yellow</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#F8FCFB;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Teal</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#EBEBEB;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Grey</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#F6F6F6;">
+                            </span>
+                            <span class="cs-ds-color-name">Smoke</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFFFFF;">
+                            </span>
+                            <span class="cs-ds-color-name">White</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Status</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#257851;">
+                            </span>
+                            <span class="cs-ds-color-name">Green</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#AF1B00;">
+                            </span>
+                            <span class="cs-ds-color-name">Red</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FF9722;">
+                            </span>
+                            <span class="cs-ds-color-name">Orange</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFD154;">
+                            </span>
+                            <span class="cs-ds-color-name">Yellow</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Teals</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#47645B;">
+                            </span>
+                            <span class="cs-ds-color-name">500</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#517368;">
+                            </span>
+                            <span class="cs-ds-color-name">400</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#74A495;">
+                            </span>
+                            <span class="cs-ds-color-name">300</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#8CB3A7;">
+                            </span>
+                            <span class="cs-ds-color-name">200</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#AECAC2;">
+                            </span>
+                            <span class="cs-ds-color-name">100</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#C6DAD4;">
+                            </span>
+                            <span class="cs-ds-color-name">75</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#F1F6F4;">
+                            </span>
+                            <span class="cs-ds-color-name">50</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Greens</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#206847;">
+                            </span>
+                            <span class="cs-ds-color-name">500</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#257851;">
+                            </span>
+                            <span class="cs-ds-color-name">400</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#36AB74;">
+                            </span>
+                            <span class="cs-ds-color-name">300</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#5BB98C;">
+                            </span>
+                            <span class="cs-ds-color-name">200</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#8ACEAE;">
+                            </span>
+                            <span class="cs-ds-color-name">100</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#ACDDC6;">
+                            </span>
+                            <span class="cs-ds-color-name">75</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#EBF7F1;">
+                            </span>
+                            <span class="cs-ds-color-name">50</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Blues</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#0F5F59;">
+                            </span>
+                            <span class="cs-ds-color-name">500</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#126D66;">
+                            </span>
+                            <span class="cs-ds-color-name">400</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#199B92;">
+                            </span>
+                            <span class="cs-ds-color-name">300</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#40ACA5;">
+                            </span>
+                            <span class="cs-ds-color-name">200</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#7AC5C0;">
+                            </span>
+                            <span class="cs-ds-color-name">100</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#A1D6D2;">
+                            </span>
+                            <span class="cs-ds-color-name">75</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#E8F5F4;">
+                            </span>
+                            <span class="cs-ds-color-name">50</span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- duplicate for seamless loop -->
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Text</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#000000;">
+                            </span>
+                            <span class="cs-ds-color-name">Pure Black</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#2A2A2A;">
+                            </span>
+                            <span class="cs-ds-color-name">Soft Black</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#4A4A4A;">
+                            </span>
+                            <span class="cs-ds-color-name">Dark Grey</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#9C9C9C;">
+                            </span>
+                            <span class="cs-ds-color-name">Stone</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#C8C8C8;">
+                            </span>
+                            <span class="cs-ds-color-name">Grey</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Background</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#EDF6F2;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Green</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFF2E3;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Orange</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFECE9;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Red</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFFCE5;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Yellow</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#F8FCFB;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Teal</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#EBEBEB;">
+                            </span>
+                            <span class="cs-ds-color-name">Lt Grey</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#F6F6F6;">
+                            </span>
+                            <span class="cs-ds-color-name">Smoke</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFFFFF;">
+                            </span>
+                            <span class="cs-ds-color-name">White</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Status</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#257851;">
+                            </span>
+                            <span class="cs-ds-color-name">Green</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#AF1B00;">
+                            </span>
+                            <span class="cs-ds-color-name">Red</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FF9722;">
+                            </span>
+                            <span class="cs-ds-color-name">Orange</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#FFD154;">
+                            </span>
+                            <span class="cs-ds-color-name">Yellow</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Teals</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#47645B;">
+                            </span>
+                            <span class="cs-ds-color-name">500</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#517368;">
+                            </span>
+                            <span class="cs-ds-color-name">400</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#74A495;">
+                            </span>
+                            <span class="cs-ds-color-name">300</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#8CB3A7;">
+                            </span>
+                            <span class="cs-ds-color-name">200</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#AECAC2;">
+                            </span>
+                            <span class="cs-ds-color-name">100</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#C6DAD4;">
+                            </span>
+                            <span class="cs-ds-color-name">75</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#F1F6F4;">
+                            </span>
+                            <span class="cs-ds-color-name">50</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Greens</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#206847;">
+                            </span>
+                            <span class="cs-ds-color-name">500</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#257851;">
+                            </span>
+                            <span class="cs-ds-color-name">400</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#36AB74;">
+                            </span>
+                            <span class="cs-ds-color-name">300</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#5BB98C;">
+                            </span>
+                            <span class="cs-ds-color-name">200</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#8ACEAE;">
+                            </span>
+                            <span class="cs-ds-color-name">100</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#ACDDC6;">
+                            </span>
+                            <span class="cs-ds-color-name">75</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#EBF7F1;">
+                            </span>
+                            <span class="cs-ds-color-name">50</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs-ds-color-group">
+                        <p class="cs-ds-group-label">Blues</p>
+                        <div class="cs-ds-color-row">
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#0F5F59;">
+                            </span>
+                            <span class="cs-ds-color-name">500</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#126D66;">
+                            </span>
+                            <span class="cs-ds-color-name">400</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#199B92;">
+                            </span>
+                            <span class="cs-ds-color-name">300</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#40ACA5;">
+                            </span>
+                            <span class="cs-ds-color-name">200</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#7AC5C0;">
+                            </span>
+                            <span class="cs-ds-color-name">100</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#A1D6D2;">
+                            </span>
+                            <span class="cs-ds-color-name">75</span>
+                          </div>
+                          <div class="cs-ds-color">
+                            <span class="cs-ds-swatch" style="background:#E8F5F4;">
+                            </span>
+                            <span class="cs-ds-color-name">50</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-subsection">
+              <h3 class="cs-h3">Across breakpoints</h3>
+              <p class="cs-body">
+                The single-column structure carries across breakpoints, addressing the mobile issue surfaced in the audit.
+              </p>
+              <div class="cs-breakpoints">
+                <figure class="cs-bp cs-bp--tablet">
+                  <div class="cs-bp-frame">
+                    <div class="cs-bp-screen">
+                      <picture>
+                        <source srcset="/assets/polimeter/tracker_tablet.webp" type="image/webp">
+                        <img src="/assets/polimeter/tracker_tablet.png" alt="Promise Tracker at tablet breakpoint" class="cs-bp-img" loading="lazy">
+                      </picture>
+                    </div>
+                  </div>
+                  <figcaption class="cs-bp-caption">Tablet</figcaption>
+                </figure>
+                <figure class="cs-bp cs-bp--mobile">
+                  <div class="cs-bp-frame">
+                    <div class="cs-bp-screen">
+                      <picture>
+                        <source srcset="/assets/polimeter/tracker_mobile.webp" type="image/webp">
+                        <img src="/assets/polimeter/tracker_mobile.png" alt="Promise Tracker at mobile breakpoint" class="cs-bp-img" loading="lazy">
+                      </picture>
+                    </div>
+                  </div>
+                  <figcaption class="cs-bp-caption">Mobile</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <!-- ═══ IMPACT ═══════════════════════════════════════════════════ -->
+          <section class="cs-section" id="impact">
+            <p class="cs-section-label">Impact</p>
+            <h2 class="cs-h2">Rebuild is live</h2>
+            <p class="cs-body">
+              The rebuild shipped at <a href="https://polimeter.org/" target="_blank" rel="noopener" class="cs-skip-btn">polimeter.org</a>. Stakeholders and the methodology team confirmed it preserved scientific rigor while significantly improving public legibility.
+            </p>
+            <p class="cs-body">
+              I designed and documented the rebuild end-to-end, and supported the development team through the early build before transitioning out to pursue graduate studies.
+            </p>
+            <div class="cs-stats">
+              <div class="cs-stat">
+                <p class="cs-stat-num" data-count-to="1891">1,891</p>
+                <p class="cs-stat-label">Promises tracked</p>
+              </div>
+              <div class="cs-stat">
+                <p class="cs-stat-num" data-count-to="1000" data-count-suffix="+">1,000+</p>
+                <p class="cs-stat-label">Monthly users</p>
+              </div>
+            </div>
+          </section>
+          <!-- ═══ REFLECTIONS ══════════════════════════════════════════════ -->
+          <section class="cs-section" id="reflections">
+            <p class="cs-section-label">Reflections</p>
+            <div class="cs-learnings">
+              <div class="cs-learning">
+                <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10">
+                  </circle>
+                  <line x1="2" y1="12" x2="22" y2="12">
+                  </line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+                <h3 class="cs-h3">Domain knowledge as design material</h3>
+                <p class="cs-body">
+                  Designing in this specialized environment meant learning the data, the methodology, and how to translate intent visually. This kind of understanding came through working closely with the political scientists, in a way no design framework could replicate.
+                </p>
+              </div>
+              <div class="cs-learning">
+                <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10">
+                  </circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                  </path>
+                  <line x1="12" y1="17" x2="12.01" y2="17">
+                  </line>
+                </svg>
+                <h3 class="cs-h3">Open questions on external validation</h3>
+                <p class="cs-body">
+                  Internal testing conveniently covered expert and non-expert perspectives, but has its limits. Testing with actual citizens and journalists would reveal whether the conceptual reframes (especially the new chart and promise history flow) land as intended, or still needs refinement.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- ═══ THANKS ══════════════════════════════════════════════════ -->
+          <p class="cs-thanks">
+            <em>thanks for reading</em>
+            <span class="cs-thanks-kao">(✿・‿・)ノ゛</span>
+          </p>
+          <!-- ═══ NEXT CASE STUDIES ═══════════════════════════════════════ -->
+          <section class="cs-next">
+            <p class="cs-section-label cs-section-label--grey">Up next</p>
+            <div class="cs-next-grid">
+              <a href="/work/reddit" class="cs-next-card cs-next-card--reddit">
+                <div class="cs-next-preview">
+                  <!-- the homepage card's reel, parked on its rest frame (never told to
+                  play): the smoky sky, "What's on your mind?", the blinking caret -->
+                  <div class="rd-reel" data-trigger="manual" aria-hidden="true">
+                    <!-- the sky: two gradient layers (::before/::after) and two wisps, pushed through an SVG
+                    displacement filter, so the puffs and veils come out ragged like smoke and morph as
+                    they drift under the fixed noise field -->
+                    <div class="rd-sky">
+                      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+                        <filter id="rd-smoke" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+                          <feTurbulence type="fractalNoise" baseFrequency="0.0022 0.005" numOctaves="3" seed="11" result="noise">
+                            <animate attributeName="baseFrequency" values="0.0022 0.005;0.0027 0.0044;0.0019 0.0056;0.0025 0.0048;0.0022 0.005" dur="10s" repeatCount="indefinite">
+                            </animate>
+                          </feTurbulence>
+                          <!-- the displacement swells and settles, so the smoke's edges roll like waves -->
+                          <feDisplacementMap in="SourceGraphic" in2="noise" scale="230" xChannelSelector="R" yChannelSelector="G">
+                            <animate attributeName="scale" values="230;300;190;275;230" keyTimes="0;0.27;0.52;0.78;1" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" dur="4.3s" repeatCount="indefinite">
+                            </animate>
+                          </feDisplacementMap>
+                        </filter>
+                      </svg>
+                      <span class="rd-wisp rd-wisp--a">
+                      </span>
+                      <span class="rd-wisp rd-wisp--b">
+                      </span>
+                    </div>
+                    <!-- the message sits in .rd-typed-rest (hidden, so the row keeps its final width); the
+                    script below moves it into .rd-typed-vis a character at a time, in step with the CSS -->
+                    <div class="rd-scene">
+                      <div class="rd-grain">
+                      </div>
+                      <div class="rd-dusk">
+                      </div>
+                      <div class="rd-composer">
+                        <span class="rd-field">
+                          <span class="rd-placeholder">What's on your mind?</span>
+                          <span class="rd-typed">
+                            <span class="rd-typed-vis">
+                            </span>
+                            <span class="rd-caret">
+                            </span>
+                            <span class="rd-typed-rest">hi, first time posting!</span>
+                          </span>
+                        </span>
+                        <span class="rd-post-slot">
+                          <span class="rd-post-track">
+                            <span class="rd-post">Post</span>
+                          </span>
+                        </span>
+                      </div>
+                      <div class="rd-star">
+                        <span class="rd-comet">
+                          <span class="rd-streak">
+                          </span>
+                          <span class="rd-dot">
+                          </span>
+                        </span>
+                        <span class="rd-burst">
+                        </span>
+                        <svg class="rd-star-glyph" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 0c.55 6.9 4.55 10.9 12 12-7.45 1.1-11.45 5.1-12 12-.55-6.9-4.55-10.9-12-12C7.45 10.9 11.45 6.9 12 0z">
+                          </path>
+                        </svg>
+                        <span class="rd-you">You</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-next-meta">
+                  <div class="cs-next-meta-row">
+                    <p class="cs-next-company">
+                      <img src="/assets/images/reddit_icon.png" alt="" class="cs-next-company-icon">
+                      Reddit
+                    </p>
+                    <span class="badge badge--building">
+                      <span class="building-dot">
+                      </span>Building</span>
+                    </div>
+                    <p class="cs-next-title">Showing Signs of Life</p>
+                  </div>
+                </a>
+                <a href="/work/zendesk" class="cs-next-card cs-next-card--zendesk">
+                  <div class="cs-next-preview">
+                  </div>
+                  <div class="cs-next-meta">
+                    <div class="cs-next-meta-row">
+                      <p class="cs-next-company">
+                        <img src="/assets/images/zendesk_icon.png" alt="" class="cs-next-company-icon">
+                        Zendesk
+                      </p>
+                      <span class="badge badge--shipped">
+                        <span class="shipped-dot">
+                        </span>Shipped</span>
+                      </div>
+                      <p class="cs-next-title">Making Usage Visible</p>
+                    </div>
+                  </a>
+                </div>
+              </section>
+            </div>
+          </main>

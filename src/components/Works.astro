@@ -1,0 +1,41 @@
+---
+import { works } from '../data/site';
+import RedditReel from './RedditReel.astro';
+---
+
+<section id="panel-works" class="panel" data-panel-id="works" aria-label="Works">
+  <div class="content-col">
+    <div class="works-grid">
+      {
+        works.map((work) => (
+          <a href={work.href} class:list={['work-card', work.tone && `work-card--${work.tone}`]}>
+            <div
+              class="work-card-preview"
+              style={work.poster ? `background-image:url(${work.poster})` : undefined}
+            >
+              {work.preview === 'reel' ? (
+                <RedditReel />
+              ) : (
+                <video class="work-card-video" src={work.video} muted loop playsinline preload="metadata"></video>
+              )}
+            </div>
+            <div class="work-card-meta">
+              <div class="work-card-meta-row">
+                <p class="work-card-company">
+                  <img src={work.icon} alt="" class:list={['work-card-company-icon', work.iconClass === 'dsl' && 'is-dsl']} />
+                  {work.company}
+                </p>
+                <span class:list={['badge', `badge--${work.badge.kind}`]}>
+                  {work.badge.kind === 'building' && <span class="building-dot"></span>}
+                  {work.badge.kind === 'shipped' && <span class="shipped-dot"></span>}
+                  {work.badge.label}
+                </span>
+              </div>
+              <p class="work-card-title">{work.title}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

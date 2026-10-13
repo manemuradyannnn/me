@@ -1,0 +1,19 @@
+---
+import Case from '../../layouts/Case.astro';
+import '../../styles/reel.css';
+import '../../styles/cases/zendesk.css';
+import html from '../../case-html/zendesk.html?raw';
+---
+
+<Case
+  title="Cindy Ly | Zendesk"
+  description="A unified usage dashboard in Zendesk's Admin Center, consolidating data split across two tools. Scoped the MVP with engineering and shipped to 10,000+ customers."
+>
+  <Fragment set:html={html} />
+</Case>
+
+<script>
+  import { initReels } from '../../scripts/reel.js';
+  import '../../scripts/cases/zendesk.js';
+  initReels();
+</script>

@@ -1,0 +1,139 @@
+---
+import { questTiles, stickers, todos } from '../data/site';
+import quests from '../data/quests.json';
+---
+
+<section id="panel-sidequests" class="panel" data-panel-id="sidequests" aria-label="Quests">
+  <div class="sq-gallery">
+    <h2 class="sq-gallery-title" aria-label="Building to think...">
+      <span class="raster">Building to think</span><span class="sq-gallery-dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span>
+    </h2>
+    <p class="sq-gallery-sub">I love tinkering around, exploring new ideas, and learning what actually works ദ്ദി(•̀ ᴗ -)</p>
+
+    <div class="sq-gallery-grid" id="sq-gallery-grid">
+      {
+        questTiles.map((tile) => (
+          <button
+            type="button"
+            class:list={['sq-tile', tile.wide && 'is-wide', tile.span && `is-col-${tile.span}`]}
+            data-preview={tile.id}
+            data-bleed={tile.bleed ? 'true' : undefined}
+            data-phone={tile.phone ? 'true' : undefined}
+            data-outline={tile.outline ? 'true' : undefined}
+            aria-label={tile.label}
+          >
+            <span class="sq-tile-bar" aria-hidden="true">
+              <span class="sq-tile-dots">
+                <i class="sq-tile-dot sq-tile-dot--red"></i>
+                <i class="sq-tile-dot sq-tile-dot--yellow"></i>
+                <i class="sq-tile-dot sq-tile-dot--green"></i>
+              </span>
+              <span class="sq-tile-name">{tile.file}</span>
+            </span>
+            <span class="sq-tile-media" style={`--ar: ${tile.media.width} / ${tile.media.height}`}>
+              {tile.media.kind === 'video' ? (
+                <video src={tile.media.src} width={tile.media.width} height={tile.media.height} muted loop playsinline preload="metadata"></video>
+              ) : (
+                <img src={tile.media.src} width={tile.media.width} height={tile.media.height} alt="" />
+              )}
+            </span>
+          </button>
+        ))
+      }
+
+      <article class="sq-note is-col-3">
+        <div class="sq-note-bar"></div>
+        <div class="sq-note-body">
+          <h3 class="sq-note-title"><span class="raster">Behind the logo</span></h3>
+          <div class="sq-note-content">
+            <div class="sq-note-text">
+              <p>Reflecting on my childhood, I recalled my love for sweets, particularly cookies. Not any typical ones, but <em>tapioca cookies.</em> In Vietnamese, these are called bánh phục linh.</p>
+              <p>Some of my fondest memories involve making these with my family and enjoying them afterwards. These colorful cookies are delicate and require careful handling, but once molded, they transform into intricate, beautiful shapes which I was inspired by. For me, they symbolize that sometimes wonderful things take time and care, even if they feel fragile along the way.</p>
+            </div>
+            <img class="sq-note-drawing" src="/assets/images/banh.webp" width="2502" height="1335" alt="bánh phục linh illustration" />
+          </div>
+        </div>
+      </article>
+
+      <button type="button" class="sq-tile is-wide is-cols-12" data-preview="7" data-bleed="true" aria-label="Tamagotchi">
+        <span class="sq-tile-bar" aria-hidden="true">
+          <span class="sq-tile-dots">
+            <i class="sq-tile-dot"></i><i class="sq-tile-dot"></i><i class="sq-tile-dot"></i>
+          </span>
+          <span class="sq-tile-name">tama.3d</span>
+        </span>
+        <span class="sq-tile-media" style="--ar: 1280 / 720">
+          <video src="/assets/tama_layers/tama_process_web.mp4" width="1280" height="720" muted loop playsinline preload="metadata"></video>
+        </span>
+      </button>
+    </div>
+
+    <section class="sq-board" aria-label="Sign-off, with stickers">
+      <div class="sq-board-desk">
+        <div class="sq-board-sheet" id="sq-board-sheet">
+          <img class="sq-board-pack" src="/assets/stickers/sticker_icon.png" alt="" />
+          {
+            stickers.map((sticker) => (
+              <button type="button" class:list={['sq-board-choice', sticker.tall && 'is-tall']} data-key={sticker.key} data-src={sticker.src} aria-label={sticker.label}>
+                <img src={sticker.src} alt="" draggable="false" />
+              </button>
+            ))
+          }
+          <button type="button" class="sq-board-reset" id="sq-board-reset">reset</button>
+        </div>
+
+        <div class="sq-board-paper" id="sq-board-paper">
+          <img class="sq-board-paper-img" src="/assets/stickers/paper.png" alt="" width="726" height="357" />
+          <div class="sq-board-note">
+            <p class="sq-board-note-head">to do:</p>
+            <ul class="sq-board-todo" id="sq-board-todo">
+              {
+                todos.map((item) => (
+                  <li class:list={[item.done && 'is-done']} role="checkbox" aria-checked={item.done ? 'true' : 'false'} tabindex="0">
+                    <span class="sq-board-strike">{item.text}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <figure class="sq-board-photo" id="sq-board-photo">
+          <img
+            src="/assets/images/3d_tears-800.jpg"
+            srcset="/assets/images/3d_tears-800.jpg 654w, /assets/images/3d_tears-1200.jpg 982w"
+            alt="Cindy crying tears of joy, holding a large white 3D-printed mangosteen"
+            width="982"
+            height="1200"
+          />
+        </figure>
+      </div>
+      <div class="sq-board-stage" id="sq-board-stage"></div>
+    </section>
+  </div>
+
+  <div id="quest-data" hidden set:html={JSON.stringify(quests)}></div>
+</section>
+
+<div class="sq-overlay" id="sq-overlay" hidden>
+  <div class="sq-window" role="dialog" aria-modal="true" aria-labelledby="sq-info-name">
+    <div class="sq-chrome">
+      <button type="button" class="sq-dot sq-dot--red" id="sq-close" aria-label="Close"></button>
+      <span class="sq-dot"></span>
+      <span class="sq-dot"></span>
+      <span class="sq-window-title" id="sq-window-title"></span>
+    </div>
+    <div class="sq-window-body">
+      <div class="sq-info-img">
+        <img alt="" id="sq-preview-img" />
+        <video id="sq-preview-video" autoplay loop muted playsinline></video>
+      </div>
+      <div class="sq-gallery-strip" id="sq-gallery-strip" hidden></div>
+      <div class="sq-info-panel">
+        <h3 class="sq-info-name" id="sq-info-name"></h3>
+        <p class="sq-info-tools" id="sq-info-tools"></p>
+        <div class="sq-info-desc" id="sq-info-desc"></div>
+      </div>
+    </div>
+  </div>
+</div>

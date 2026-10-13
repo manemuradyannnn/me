@@ -1,0 +1,528 @@
+<!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
+<nav class="cs-nav">
+  <a href="/" class="cs-nav-left" aria-label="Home">
+    <img src="/assets/images/logo.png" alt="" class="cs-nav-logo">
+  </a>
+</nav>
+<!-- ═══ SIDENAV ═════════════════════════════════════════════════════ -->
+<aside class="cs-sidenav" aria-label="Case study sections">
+  <a href="/#works" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6">
+      </polyline>
+    </svg>
+    Back
+  </a>
+  <nav class="cs-side-nav">
+    <a href="#tldr" class="cs-side-link" data-target="tldr">TL;DR</a>
+    <a href="#background" class="cs-side-link" data-target="background">Background</a>
+    <a href="#problem" class="cs-side-link" data-target="problem">Problem</a>
+    <a href="#process" class="cs-side-link" data-target="process">Process</a>
+    <a href="#final-product" class="cs-side-link" data-target="final-product">Final Product</a>
+    <!-- <a href="#scenario" class="cs-side-link" data-target="scenario">Scenario</a> -->
+    <a href="#impact" class="cs-side-link" data-target="impact">Impact</a>
+    <a href="#reflections" class="cs-side-link" data-target="reflections">Reflections</a>
+  </nav>
+</aside>
+<main class="cs" id="cs-content">
+  <!-- ═══ HERO ═════════════════════════════════════════════════════ -->
+  <div class="cs-hero-visual" aria-hidden="true">
+    <video class="cs-hero-img cs-hero-video" src="/assets/neuralyfe/neuralyfe_reel.mp4" autoplay loop muted playsinline data-fallback="/assets/neuralyfe/neuralyfe_reel_anim.webp" data-fallback-lg="/assets/neuralyfe/neuralyfe_reel_anim_lg.webp" data-poster="/assets/neuralyfe/neuralyfe_reel_poster.webp">
+    </video>
+  </div>
+  <div class="cs-scroll-body">
+    <header class="cs-hero">
+      <p class="cs-company">
+        <img src="/assets/images/figma_icon.png" alt="" class="cs-company-icon">
+        FigBuild 2026
+      </p>
+      <h1 class="cs-h1">NeuraLyfe</h1>
+      <ul class="cs-tags">
+        <li class="cs-tag--award">
+          <span class="cs-award-icon" aria-hidden="true">🏆</span>1st Place</li>
+          <li>AI Native</li>
+          <li>Wearable</li>
+          <li>Clinical Dashboard</li>
+        </ul>
+      </header>
+      <!-- ═══ TL;DR ════════════════════════════════════════════════════ -->
+      <section class="cs-section" id="tldr">
+        <p class="cs-section-label">TL;DR</p>
+        <p class="cs-body">
+          NeuraLyfe is a wearable sensor and interface system that makes chronic traumatic encephalopathy (CTE), the invisible brain trauma behind football's health crisis, measurable in real time.
+        </p>
+        <p class="cs-body">
+          I worked across ideation, research, and system design, owning the Roster view and <a href="https://www.youtube.com/watch?v=yO55s9Qtra8" target="_blank" rel="noopener" class="cs-skip-btn">submission video</a>. We placed <strong>1st out of 690 teams</strong> at FigBuild 2026.
+        </p>
+        <dl class="cs-meta">
+          <div class="cs-meta-row">
+            <dt>My Role</dt>
+            <dd>Product Designer<br>Video Producer</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Timeline</dt>
+            <dd>4 days, FigBuild 2026</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Team</dt>
+            <dd>Cindy Ly<br>Naomi Boruchowicz<br>Malik Zhang<br>Jimmy Huang</dd>
+          </div>
+          <div class="cs-meta-row">
+            <dt>Tools</dt>
+            <dd>Figma + Figma Make<br>Claude<br>Gemini<br>3D Modeling + Printing</dd>
+          </div>
+        </dl>
+      </section>
+      <!-- ═══ BACKGROUND ═══════════════════════════════════════════════ -->
+      <section class="cs-section" id="background">
+        <p class="cs-section-label">Background</p>
+        <h2 class="cs-h2">The NFL's blind spot</h2>
+        <p class="cs-body">
+          At FigBuild, Figma's global designathon, our team landed on a problem we couldn't stop talking about: the National Football League (NFL) tracks every muscle and joint, but has <strong>zero visibility into brain trauma</strong>.
+        </p>
+      </section>
+      <!-- ═══ PROBLEM ══════════════════════════════════════════════════ -->
+      <section class="cs-section" id="problem">
+        <p class="cs-section-label">Problem</p>
+        <h2 class="cs-h2">The silent danger</h2>
+        <p class="cs-body">
+          Millions watch football, but the players absorb thousands of hits no one can see. CTE is a degenerative brain disease caused by repeated head trauma and can only be confirmed through autopsy after death. A <a href="https://www.bumc.bu.edu/camed/2023/02/06/researchers-find-cte-in-345-of-376-former-nfl-players-studied/" target="_blank" rel="noopener" class="cs-skip-btn">Boston University study</a> found CTE in over <strong>9 out of 10</strong> former NFL players examined.
+        </p>
+        <picture>
+          <source srcset="/assets/neuralyfe/stat.webp" type="image/webp">
+          <img src="/assets/neuralyfe/stat.png" alt="9 out of 10 figures highlighted, representing the 91.7% CTE rate in former NFL players" class="cs-video" loading="lazy">
+        </picture>
+        <h3 class="cs-subhead">The evidence gap</h3>
+        <div class="cs-considerations">
+          <ul class="cs-consideration-list">
+            <li>
+              <svg class="cs-consideration-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2">
+                </path>
+              </svg>
+              <span>
+                <strong>Medical Staff</strong>
+                <span class="cs-inline-badge cs-inline-badge--green">Primary user</span>
+                <br>No objective source of truth. Spotters flag injuries visually with no real-time data to justify a game-altering call.</span>
+              </li>
+              <li>
+                <svg class="cs-consideration-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+                  </path>
+                  <circle cx="12" cy="7" r="4">
+                  </circle>
+                </svg>
+                <span>
+                  <strong>Players</strong>
+                  <span class="cs-inline-badge cs-inline-badge--amber">Secondary user</span>
+                  <br>Self-reporting fails by design. No protocol can fix a system where the patient controls the diagnosis.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cs-brief cs-brief--northstar">
+              <p class="cs-brief-label">
+                <svg class="cs-brief-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>Our North Star</p>
+                <p class="cs-brief-text">How do we stop diagnosing CTE at autopsy and start detecting in life?</p>
+              </div>
+            </section>
+            <!-- ═══ PROCESS ══════════════════════════════════════════════════ -->
+            <section class="cs-section" id="process">
+              <p class="cs-section-label">Process</p>
+              <h2 class="cs-h2">Designing the missing system</h2>
+              <div class="cs-step">
+                <span class="cs-step-num">01</span>
+                <div class="cs-step-body">
+                  <h3 class="cs-h3">Scoping to one sport</h3>
+                  <p class="cs-body">
+                    Our first instinct was to design a catch-all device. CTE shows up in soccer, gymnastics, boxing, and beyond, so why not build a universal wearable?
+                  </p>
+                  <p class="cs-body">
+                    We quickly scratched that idea because breadth would cost us depth. Football is synonymous with CTE in the public imagination, and universal messaging would have <strong>diluted storytelling</strong>.
+                  </p>
+                </div>
+              </div>
+              <div class="cs-step">
+                <span class="cs-step-num">02</span>
+                <div class="cs-step-body">
+                  <h3 class="cs-h3">Placing the sensor</h3>
+                  <div class="cs-iter-list">
+                    <div class="cs-iter-item cs-iter-item--dismissed">
+                      <p class="cs-card-label">
+                        <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <line x1="18" y1="6" x2="6" y2="18">
+                          </line>
+                          <line x1="6" y1="6" x2="18" y2="18">
+                          </line>
+                        </svg>
+                        Forehead adhesive patch
+                      </p>
+                      <p class="cs-card-body">
+                        Too wide application and sci-fi.
+                      </p>
+                    </div>
+                    <div class="cs-iter-item cs-iter-item--dismissed">
+                      <p class="cs-card-label">
+                        <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <line x1="18" y1="6" x2="6" y2="18">
+                          </line>
+                          <line x1="6" y1="6" x2="18" y2="18">
+                          </line>
+                        </svg>
+                        Wrist and limb wearables
+                      </p>
+                      <p class="cs-card-body">
+                        Felt too indirect.
+                      </p>
+                    </div>
+                    <div class="cs-iter-item cs-iter-item--kept">
+                      <p class="cs-card-label">
+                        <svg class="cs-iter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="20 6 9 17 4 12">
+                          </polyline>
+                        </svg>
+                        Integrated into the helmet
+                      </p>
+                      <p class="cs-card-body">
+                        Localized to where the damage happens.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-step">
+                <span class="cs-step-num">03</span>
+                <div class="cs-step-body">
+                  <h3 class="cs-h3">Choosing the primary user</h3>
+                  <p class="cs-body">
+                    We debated who the interface was even <em>for</em>. Players? Coaches? Family? We narrowed to medical staff: the only actor in the loop with both the authority to pull a player and no structural incentive to keep them in.
+                  </p>
+                  <picture>
+                    <source srcset="/assets/neuralyfe/neuralyfe_action.webp" type="image/webp">
+                    <img src="/assets/neuralyfe/neuralyfe_action.png" alt="Sideline medical staff monitoring live NeuraLyfe data on three screens during a game" class="cs-image" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <div class="cs-step">
+                <span class="cs-step-num">04</span>
+                <div class="cs-step-body">
+                  <h3 class="cs-h3">Structuring the interface</h3>
+                  <p class="cs-body">
+                    With the user and hardware defined, we designed a tri-view interface built around the questions medical staff need answers to in the moment:
+                  </p>
+                  <div class="cs-view-cards">
+                    <div class="cs-view-card">
+                      <div class="cs-view-card-content">
+                        <p class="cs-view-card-q">Who needs attention?</p>
+                        <p class="cs-view-card-title">Roster View</p>
+                        <p class="cs-view-card-body">Full team at a glance, sorted by urgency.</p>
+                      </div>
+                    </div>
+                    <div class="cs-view-card">
+                      <div class="cs-view-card-content">
+                        <p class="cs-view-card-q">What's happening?</p>
+                        <p class="cs-view-card-title">Brain View</p>
+                        <p class="cs-view-card-body">Region-level damage; progression over time.</p>
+                      </div>
+                    </div>
+                    <div class="cs-view-card">
+                      <div class="cs-view-card-content">
+                        <p class="cs-view-card-q">What caused it?</p>
+                        <p class="cs-view-card-title">Replay View</p>
+                        <p class="cs-view-card-body">Tie every spike back to the play that caused it.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="cs-body">
+                    Starting from a teammate's initial prototype, I led design of the Roster view. The initial version listed all players at equal weight with no urgency signal. In the restructure, the highest-risk player surfaces in a focused callout at top; the full roster below is sorted by severity.
+                  </p>
+                  <picture>
+                    <source srcset="/assets/neuralyfe/roster_old.webp" type="image/webp">
+                    <img src="/assets/neuralyfe/roster_old.png" alt="Early roster view prototype" class="cs-image cs-image--bordered" loading="lazy">
+                  </picture>
+                  <p class="cs-caption">initial Roster view prototype</p>
+                </div>
+              </div>
+            </section>
+            <!-- ═══ PRODUCT ══════════════════════════════════════════════════ -->
+            <section class="cs-section" id="final-product">
+              <p class="cs-section-label">Final Product</p>
+              <h2 class="cs-h2">
+                <em>NeuraLyfe:</em> making the invisible visible</h2>
+                <p class="cs-body">The two-part system: hardware that captures what's happening inside a player's brain, and an interface that turns that data into something medical staff can act on.</p>
+                <!-- Halo -->
+                <div class="cs-subsection">
+                  <h3 class="cs-h3">The Halo</h3>
+                  <p class="cs-body">
+                    The Halo is a multi-modal sensor wearable that integrates discreetly into existing helmets. We 3D-modeled it and printed a physical prototype to bring it to life.
+                  </p>
+                  <div class="cs-media" style="margin-bottom: 12px;">
+                    <video class="cs-video" loop muted playsinline preload="none" data-lazy data-fallback="/assets/neuralyfe/halo_3D_anim.webp">
+                      <source src="/assets/neuralyfe/halo_3D.mp4" type="video/mp4">
+                    </video>
+                    <div class="cs-replay">
+                      <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                          </path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="cs-halo-duo" style="margin-top: 0;">
+                    <div class="cs-halo-photo-wrap">
+                      <picture>
+                        <source srcset="/assets/neuralyfe/product_mock.webp" type="image/webp">
+                        <img src="/assets/neuralyfe/product_mock.png" alt="Football helmet with integrated Halo sensor" class="cs-halo-mock" loading="lazy">
+                      </picture>
+                    </div>
+                    <div class="cs-halo-photo-wrap">
+                      <picture>
+                        <source srcset="/assets/neuralyfe/product_shot1.webp" type="image/webp">
+                        <img src="/assets/neuralyfe/product_shot1.png" alt="3D-printed Halo prototype on turf with a football" class="cs-halo-photo" loading="lazy">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="cs-modality-grid">
+                    <div class="cs-modality">
+                      <p class="cs-card-label">EEG Sensors</p>
+                      <p class="cs-card-body">Map brain activity and neural connectivity.</p>
+                    </div>
+                    <div class="cs-modality">
+                      <p class="cs-card-label">Biomarker Bands</p>
+                      <p class="cs-card-body">Track p-Tau 217, NfL, and GFAP to form a <em>CTE Progression Index</em>.</p>
+                    </div>
+                    <div class="cs-modality">
+                      <p class="cs-card-label">Impact Camera</p>
+                      <p class="cs-card-body">Verifies hits and reconstructs plays.</p>
+                    </div>
+                  </div>
+                  <p class="cs-body cs-body--note">
+                    <strong>A note on the science:</strong> p-Tau 217, NfL, and GFAP are biomarkers individually linked to neurodegenerative disease in published research. The speculative part is combining them as a real-time CTE Progression Index.
+                  </p>
+                </div>
+                <!-- Interface views -->
+                <div class="cs-subsection">
+                  <h3 class="cs-h3" style="margin-bottom: 28px;">The Interface</h3>
+                  <div class="cs-step">
+                    <span class="cs-step-num">01</span>
+                    <div class="cs-step-body">
+                      <h3 class="cs-h3">Roster view</h3>
+                      <p class="cs-body">
+                        Color-coded player cards and active player callout so CTE triage reads at a glance.
+                      </p>
+                      <div class="cs-media">
+                        <video class="cs-video" loop muted playsinline preload="none" data-lazy data-fallback="/assets/neuralyfe/roster_view_anim.webp">
+                          <source src="/assets/neuralyfe/roster_view.mp4" type="video/mp4">
+                        </video>
+                        <div class="cs-replay">
+                          <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                              </path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cs-step">
+                    <span class="cs-step-num">02</span>
+                    <div class="cs-step-body">
+                      <h3 class="cs-h3">Brain view</h3>
+                      <p class="cs-body">
+                        A 3D brain with damage color-coded by region, and a season timeline to scrub through weeks and flag changes.
+                      </p>
+                      <div class="cs-media">
+                        <video class="cs-video" loop muted playsinline preload="none" data-lazy data-fallback="/assets/neuralyfe/brain_view_anim.webp">
+                          <source src="/assets/neuralyfe/brain_view.mp4" type="video/mp4">
+                        </video>
+                        <div class="cs-replay">
+                          <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                              </path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cs-step">
+                    <span class="cs-step-num">03</span>
+                    <div class="cs-step-body">
+                      <h3 class="cs-h3">Replay view</h3>
+                      <p class="cs-body">
+                        Overlays severity, timestamp, and affected region onto game footage.
+                      </p>
+                      <div class="cs-media" style="margin-bottom: 0;">
+                        <video class="cs-video" loop muted playsinline preload="none" data-lazy data-fallback="/assets/neuralyfe/replay_view_anim.webp">
+                          <source src="/assets/neuralyfe/replay_view.mp4" type="video/mp4">
+                        </video>
+                        <div class="cs-replay">
+                          <button class="cs-replay-btn" type="button" aria-label="Replay from the beginning">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z">
+                              </path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Protocol -->
+                <div class="cs-subsection">
+                  <h3 class="cs-h3">The Protocol</h3>
+                  <p class="cs-body">
+                    Without a decision rule, medical staff still carry the political weight of pulling a player. Our protocol is designed to make the call for them.
+                  </p>
+                  <div class="cs-protocol">
+                    <span class="cs-protocol-step">Baseline</span>
+                    <span class="cs-protocol-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="cs-protocol-step cs-protocol-step--yellow">Spike</span>
+                    <span class="cs-protocol-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="cs-protocol-step cs-protocol-step--amber">Elevated</span>
+                    <span class="cs-protocol-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="cs-protocol-step cs-protocol-step--red">Critical</span>
+                    <span class="cs-protocol-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="cs-protocol-step cs-protocol-step--final">Removed</span>
+                  </div>
+                  <p class="cs-body">All data belongs to the player, travels with them across teams and into retirement, and removal alerts can't be suppressed.</p>
+                </div>
+              </section>
+              <!-- ═══ SCENARIO (hidden) ══════════════════════════════════════ -->
+              <section class="cs-section" id="scenario" style="display:none">
+                <p class="cs-section-label">Scenario</p>
+                <h2 class="cs-h2">Pressure-testing the system</h2>
+                <div class="cs-scenario-intro">
+                  <img src="/assets/neuralyfe/football_profile.png" alt="" class="cs-scenario-avatar">
+                  <p class="cs-body">Pat is a college linebacker hoping to go pro, already flagged amber from preseason.</p>
+                </div>
+                <div class="cs-scenario-beats">
+                  <div class="cs-scenario-beat">
+                    <p class="cs-scenario-headline">The hit</p>
+                    <p class="cs-body">Pat takes a routine hit. He feels fine but under his helmet, the Halo was listening.</p>
+                  </div>
+                  <div class="cs-scenario-beat">
+                    <p class="cs-scenario-headline">The call</p>
+                    <p class="cs-body">His frontal lobe reaches the threshold and his card turns red. Pat is pulled.</p>
+                  </div>
+                  <div class="cs-scenario-beat cs-scenario-beat--last">
+                    <p class="cs-scenario-headline">The ripple</p>
+                    <p class="cs-body">While Pat recovers, staff reviews the data to find that one drill generated more cumulative force. They modify the drill and the damage stops.</p>
+                  </div>
+                </div>
+              </section>
+              <!-- ═══ IMPACT ═══════════════════════════════════════════════════ -->
+              <section class="cs-section" id="impact">
+                <p class="cs-section-label">Impact</p>
+                <h2 class="cs-h2">First place.</h2>
+                <p class="cs-body">
+                  NeuraLyfe won and took home the grand prize. Judges distinguished it for its visuals, video, storytelling, and especially prototype, which we 3D-printed to bring the concept to life.
+                </p>
+                <div class="cs-stats cs-stats--trio">
+                  <div class="cs-stat">
+                    <p class="cs-stat-num" data-count-to="690">690</p>
+                    <p class="cs-stat-label">Teams</p>
+                  </div>
+                  <div class="cs-stat">
+                    <p class="cs-stat-num" data-count-to="2184">2,184</p>
+                    <p class="cs-stat-label">Participants</p>
+                  </div>
+                  <div class="cs-stat">
+                    <p class="cs-stat-num cs-stat-num--prize" data-count-to="10000" data-count-prefix="$">$10,000</p>
+                    <p class="cs-stat-label">Grand prize</p>
+                  </div>
+                </div>
+                <picture>
+                  <source srcset="/assets/neuralyfe/neuralyfe_win.webp" type="image/webp">
+                  <img src="/assets/neuralyfe/neuralyfe_win.jpg" alt="NeuraLyfe team celebrating first place at FigBuild 2026" class="cs-video" loading="lazy">
+                </picture>
+              </section>
+              <!-- ═══ REFLECTIONS ══════════════════════════════════════════════ -->
+              <section class="cs-section" id="reflections">
+                <p class="cs-section-label">Reflections</p>
+                <div class="cs-learnings">
+                  <div class="cs-learning">
+                    <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2">
+                      </rect>
+                      <line x1="8" y1="21" x2="16" y2="21">
+                      </line>
+                      <line x1="12" y1="17" x2="12" y2="21">
+                      </line>
+                    </svg>
+                    <h3 class="cs-h3">Parallel prompting: polish vs. cohesion</h3>
+                    <p class="cs-body">
+                      Our breakthrough was splitting the interface into three flows and prompting Figma Make in parallel. This process gave us more refined outputs under a strict time-constraint, but it also cost us cohesion visually. Next time, I'd build a <em>shared component library</em> beforehand, instead of trying to retrofit consistency after.
+                    </p>
+                  </div>
+                  <div class="cs-learning">
+                    <svg class="cs-learning-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                      </path>
+                    </svg>
+                    <h3 class="cs-h3">Emotional resonance beats topical relevance</h3>
+                    <p class="cs-body">
+                      When producing our video, the hardest problem I faced was empathy. Football is niche and CTE is abstract, yet I had to get someone who's never watched a game to care about the cause. What I underestimated was that empathy travels further than interest, and being sport-specific widened emotional reach rather than narrow it.
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <!-- ═══ SUBMISSION VIDEO ════════════════════════════════════════ -->
+              <section class="cs-section" id="video">
+                <div class="cs-video-wrap">
+                  <iframe class="cs-video-iframe" src="https://www.youtube.com/embed/yO55s9Qtra8" title="NeuraLyfe submission video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                  </iframe>
+                </div>
+                <p class="cs-caption">our submission video</p>
+              </section>
+              <!-- ═══ LOOKING FORWARD ══════════════════════════════════════════ -->
+              <!-- ═══ THANKS ══════════════════════════════════════════════════ -->
+              <p class="cs-thanks">
+                <em>thanks for reading</em>
+                <span class="cs-thanks-kao">(✿・‿・)ノ゛</span>
+              </p>
+              <!-- ═══ NEXT CASE STUDIES ═══════════════════════════════════════ -->
+              <section class="cs-next">
+                <p class="cs-section-label cs-section-label--grey">Up next</p>
+                <div class="cs-next-grid">
+                  <a href="/work/zendesk" class="cs-next-card cs-next-card--zendesk">
+                    <div class="cs-next-preview">
+                    </div>
+                    <div class="cs-next-meta">
+                      <div class="cs-next-meta-row">
+                        <p class="cs-next-company">
+                          <img src="/assets/images/zendesk_icon.png" alt="" class="cs-next-company-icon">
+                          Zendesk
+                        </p>
+                        <span class="badge badge--shipped">
+                          <span class="shipped-dot">
+                          </span>Shipped</span>
+                        </div>
+                        <p class="cs-next-title">Making Usage Visible</p>
+                      </div>
+                    </a>
+                    <a href="/work/polimeter" class="cs-next-card cs-next-card--green">
+                      <div class="cs-next-preview">
+                      </div>
+                      <div class="cs-next-meta">
+                        <div class="cs-next-meta-row">
+                          <p class="cs-next-company">
+                            <img src="/assets/images/dsl_icon.png" alt="" class="cs-next-company-icon cs-next-company-icon--dsl">
+                            Digital Society Lab
+                          </p>
+                          <span class="badge badge--shipped">
+                            <span class="shipped-dot">
+                            </span>Shipped</span>
+                          </div>
+                          <p class="cs-next-title">Polimeter</p>
+                        </div>
+                      </a>
+                    </div>
+                  </section>
+                </div>
+              </main>
