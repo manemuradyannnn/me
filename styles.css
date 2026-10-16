@@ -1587,6 +1587,18 @@ a.window {
   padding: 12px 0 168px;
 }
 
+.sticker-auth-note {
+  margin: 18px auto 0;
+  max-width: 420px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
 .sticker-desk {
   position: relative;
   z-index: 2;

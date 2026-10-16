@@ -36,6 +36,41 @@
     clientId = next.user.id;
   }
 
+  function safeDetail(data) {
+    if (!data || typeof data !== "object") return { error: "auth" };
+    const detail = {};
+    for (const key of ["error", "error_code", "code", "msg", "message", "error_description", "hint"]) {
+      if (data[key]) detail[key] = data[key];
+    }
+    return Object.keys(detail).length ? detail : { error: "auth" };
+  }
+
+  function noteFor(error) {
+    const code = String(error.code || error.message || "").toLowerCase();
+    if (error.status === 429 || code.includes("rate") || code.includes("over_request")) {
+      return "Couldn't sign in to leave a sticker. Try again in a minute.";
+    }
+    if (code.includes("captcha")) {
+      return "Couldn't sign in to leave a sticker. The sign-in check was blocked.";
+    }
+    return "Couldn't sign in to leave a sticker.";
+  }
+
+  function showAuthNote(text) {
+    let note = board.querySelector(".sticker-auth-note");
+    if (!text) {
+      if (note) note.remove();
+      return;
+    }
+    if (!note) {
+      note = document.createElement("p");
+      note.className = "sticker-auth-note";
+      note.setAttribute("role", "status");
+      board.append(note);
+    }
+    note.textContent = text;
+  }
+
   async function authRequest(path, body) {
     const response = await fetch(`${authConfig.url}/auth/v1${path}`, {
       method: "POST",
@@ -46,7 +81,20 @@
       body: JSON.stringify(body || {}),
     });
     const data = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(data.msg || data.error_description || data.message || "auth");
+    if (!response.ok) {
+      const error = new Error(data.msg || data.error_description || data.message || data.error || "auth");
+      error.status = response.status;
+      error.code = data.error_code || data.code || data.error || null;
+      error.detail = safeDetail(data);
+      throw error;
+    }
+    if (!data.access_token || !data.user || !data.user.id) {
+      const error = new Error("anonymous sign-in returned no session");
+      error.status = response.status;
+      error.code = "missing_session";
+      error.detail = { error: "missing_session" };
+      throw error;
+    }
     return data;
   }
 
@@ -69,22 +117,44 @@
     return remember(authConfig.url, data);
   }
 
+  async function createAnonymous() {
+    const created = await authRequest("/signup", { data: {} });
+    remember(authConfig.url, created);
+  }
+
   async function ensureSession() {
     session = readSession(authConfig.url);
     if (!session) {
-      const created = await authRequest("/signup", { data: {} });
-      remember(authConfig.url, created);
+      await createAnonymous();
     } else if (session.expires_at * 1000 < Date.now() + 20000) {
-      await refreshSession();
+      try {
+        await refreshSession();
+      } catch (error) {
+        console.error("sticker session refresh failed", {
+          status: error.status || null,
+          body: error.detail || { error: error.message },
+        });
+        localStorage.removeItem(storageKey(authConfig.url));
+        session = null;
+        clientId = "";
+        await createAnonymous();
+      }
     } else {
       clientId = session.user.id;
     }
+    showAuthNote("");
     render();
     return session;
   }
 
-  const authReady = ensureSession().catch(() => {
+  const authReady = ensureSession().catch((error) => {
     clientId = "";
+    session = null;
+    console.error("sticker sign-in failed", {
+      status: error.status || null,
+      body: error.detail || { error: error.message },
+    });
+    showAuthNote(noteFor(error));
   });
 
   let placed = [];
@@ -179,13 +249,27 @@
         body: body === undefined ? undefined : JSON.stringify(body),
         cache: "no-store",
       });
-      if (!retry.ok) throw new Error("board");
+      if (!retry.ok) await failWrite(retry, method);
       const retryText = await retry.text();
       return retryText ? JSON.parse(retryText) : null;
     }
-    if (!response.ok) throw new Error("board");
+    if (!response.ok) await failWrite(response, method);
     const text = await response.text();
     return text ? JSON.parse(text) : null;
+  }
+
+  async function failWrite(response, method) {
+    const text = await response.text();
+    let body = { message: text.slice(0, 300) };
+    try {
+      body = safeDetail(JSON.parse(text));
+    } catch (error) {
+      /* keep the short text body */
+    }
+    if (method !== "GET") console.error("sticker write failed", { status: response.status, body });
+    const error = new Error("board");
+    error.status = response.status;
+    throw error;
   }
 
   function toClient(row) {
