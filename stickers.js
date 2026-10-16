@@ -375,9 +375,32 @@
       if (dragChoice && dragChoice !== choice) return;
       mountPeel(choice);
     });
-    choice.addEventListener("pointerdown", () => {
+    choice.addEventListener("pointerdown", (event) => {
       dragChoice = choice;
       mountPeel(choice);
+      const start = () => Boolean(choice.peel && choice.peel.grab && choice.peel.grab(event));
+      if (start()) return;
+      let tries = 0;
+      let waiting = true;
+      const stop = () => {
+        waiting = false;
+      };
+      window.addEventListener("pointerup", stop, true);
+      window.addEventListener("pointercancel", stop, true);
+      const retry = () => {
+        if (!waiting || !choice.peel || tries++ > 30) {
+          window.removeEventListener("pointerup", stop, true);
+          window.removeEventListener("pointercancel", stop, true);
+          return;
+        }
+        if (start()) {
+          window.removeEventListener("pointerup", stop, true);
+          window.removeEventListener("pointercancel", stop, true);
+          return;
+        }
+        requestAnimationFrame(retry);
+      };
+      requestAnimationFrame(retry);
     });
   });
 

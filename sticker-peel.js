@@ -619,8 +619,19 @@ function createStickerPeel(parent, options) {
     wake();
   };
 
+  let suppressCancel = 0;
+
   const liftOff = (press) => {
     if (press.floating || settings.contain) return;
+    // Reparenting a captured node fires pointercancel and kills the drag.
+    suppressCancel += 1;
+    if (hit.hasPointerCapture?.(press.id)) {
+      try {
+        hit.releasePointerCapture(press.id);
+      } catch (error) {
+        /* already released */
+      }
+    }
     const rect = parent.getBoundingClientRect();
     const dx = rect.left + parent.clientLeft;
     const dy = rect.top + parent.clientTop;
@@ -642,6 +653,10 @@ function createStickerPeel(parent, options) {
     root.style.top = "0";
     stack += 1;
     root.style.zIndex = String(1000 + stack);
+    draw();
+    queueMicrotask(() => {
+      suppressCancel = Math.max(0, suppressCancel - 1);
+    });
   };
 
   const updateHover = (event) => {
@@ -672,6 +687,7 @@ function createStickerPeel(parent, options) {
   };
 
   const endPress = (event) => {
+    if (event.type === "pointercancel" && suppressCancel > 0) return;
     const press = state.press;
     if (!press || press.id !== event.pointerId) return;
     const floating = press.floating;
@@ -723,14 +739,15 @@ function createStickerPeel(parent, options) {
     wake();
   };
 
-  const onHitDown = (event) => {
-    if (event.button !== 0 || !sticker.ready) return;
-    updateHover(event);
-    if (!state.hover) return;
+  const beginPress = (event) => {
+    if (!event || event.button !== 0 || !sticker.ready) return false;
+    if (state.press && state.press.id === event.pointerId) return true;
     const point = toParent(event);
+    state.local = toLocal(point);
+    state.hover = true;
     state.press = {
       id: event.pointerId,
-      grab: toLocal(point),
+      grab: state.local,
       origin: point,
       pointer: point,
       pivot: point,
@@ -743,11 +760,15 @@ function createStickerPeel(parent, options) {
     state.pivotV = { x: 0, y: 0 };
     state.vx = 0;
     state.vy = 0;
-    hit.setPointerCapture?.(event.pointerId);
     if (settings.draggable) hit.style.cursor = "grabbing";
     track();
     event.preventDefault();
     wake();
+    return true;
+  };
+
+  const onHitDown = (event) => {
+    beginPress(event);
   };
 
   const onHitUp = (event) => {
@@ -798,6 +819,9 @@ function createStickerPeel(parent, options) {
     },
     isDragging() {
       return Boolean(state.press);
+    },
+    grab(event) {
+      return beginPress(event);
     },
     destroy() {
       alive = false;

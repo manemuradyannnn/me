@@ -20,7 +20,6 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  overflow-x: clip;
 }
 
 body {
@@ -372,11 +371,13 @@ body.is-transitioning {
   position: relative;
 }
 
-.preview-reddit img {
+.preview-reddit img,
+.preview-reddit video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .preview-device {
@@ -406,12 +407,14 @@ body.is-transitioning {
   background: #fff;
 }
 
-.preview-site img {
+.preview-site img,
+.preview-site video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
+  pointer-events: none;
 }
 
 .work-blurb strong {
@@ -1484,27 +1487,7 @@ a.window {
   }
 
   .works-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .work-card,
-  .work-preview {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .work-meta {
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .work-card h2,
-  .work-card .work-meta-replay h2 {
-    white-space: normal;
-  }
-
-  .pill {
-    max-width: 100%;
+    grid-template-columns: 1fr;
   }
 
   .top-nav {
