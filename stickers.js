@@ -8,8 +8,11 @@
 
   const choices = [...sheet.querySelectorAll(".sticker-choice")];
 
+  const SUPABASE_URL = "https://glioegnsfbhpwsxyqeew.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_VXVKNUAuinG7NolB-m5OQA_pYo0n4QQ";
+
   let clientId = "";
-  let authConfig = null;
+  let authConfig = { url: SUPABASE_URL, publishableKey: SUPABASE_KEY };
   let session = null;
 
   function storageKey(url) {
@@ -67,11 +70,6 @@
   }
 
   async function ensureSession() {
-    if (!authConfig) {
-      const response = await fetch("/api/config", { cache: "no-store" });
-      if (!response.ok) throw new Error("config");
-      authConfig = await response.json();
-    }
     session = readSession(authConfig.url);
     if (!session) {
       const created = await authRequest("/signup", { data: {} });
@@ -155,31 +153,110 @@
     reset.classList.toggle("is-live", placed.some((sticker) => sticker.by === clientId));
   }
 
-  async function readBoard() {
-    const response = await fetch("/api/stickers", { cache: "no-store" });
-    if (!response.ok) throw new Error("board");
-    return response.json();
-  }
-
-  async function writeBoard(method, url, body) {
-    await authReady;
-    if (!session) throw new Error("auth");
-    if (session.expires_at * 1000 < Date.now() + 20000) await refreshSession();
-    const send = () => fetch(url, {
+  async function rest(pathname, { method = "GET", body, prefer, withUser = false } = {}) {
+    const headers = {
+      apikey: SUPABASE_KEY,
+      Accept: "application/json",
+    };
+    if (withUser) {
+      if (!session) throw new Error("auth");
+      headers.Authorization = `Bearer ${session.access_token}`;
+    }
+    if (body !== undefined) headers["Content-Type"] = "application/json";
+    if (prefer) headers.Prefer = prefer;
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${pathname}`, {
       method,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${session.access_token}`,
-      },
-      body: body ? JSON.stringify(body) : "{}",
+      headers,
+      body: body === undefined ? undefined : JSON.stringify(body),
+      cache: "no-store",
     });
-    let response = await send();
-    if (response.status === 401) {
+    if (response.status === 401 && withUser) {
       await refreshSession();
-      response = await send();
+      headers.Authorization = `Bearer ${session.access_token}`;
+      const retry = await fetch(`${SUPABASE_URL}/rest/v1/${pathname}`, {
+        method,
+        headers,
+        body: body === undefined ? undefined : JSON.stringify(body),
+        cache: "no-store",
+      });
+      if (!retry.ok) throw new Error("board");
+      const retryText = await retry.text();
+      return retryText ? JSON.parse(retryText) : null;
     }
     if (!response.ok) throw new Error("board");
-    return response.json();
+    const text = await response.text();
+    return text ? JSON.parse(text) : null;
+  }
+
+  function toClient(row) {
+    const choice = choiceFor(row.key);
+    if (!choice) return null;
+    return {
+      id: row.id,
+      key: row.key,
+      src: choice.dataset.src,
+      by: row.placed_by,
+      ax: Number(row.ax),
+      ay: Number(row.ay),
+      rot: Number(row.rot),
+      anchor: "paper",
+    };
+  }
+
+  async function readBoard() {
+    const [rows, state] = await Promise.all([
+      rest("stickers?select=id,key,placed_by,ax,ay,rot,anchor&order=created_at.asc"),
+      rest("board_state?select=version&id=eq.1"),
+    ]);
+    const versionRow = Array.isArray(state) ? state[0] : null;
+    if (!versionRow || !Number.isFinite(Number(versionRow.version))) throw new Error("board");
+    return {
+      version: Number(versionRow.version),
+      stickers: (Array.isArray(rows) ? rows : []).map(toClient).filter(Boolean),
+    };
+  }
+
+  async function writeBoard(action, payload) {
+    await authReady;
+    if (!session || !clientId) throw new Error("auth");
+    if (session.expires_at * 1000 < Date.now() + 20000) await refreshSession();
+    if (action === "add") {
+      await rest("stickers", {
+        method: "POST",
+        prefer: "return=minimal",
+        withUser: true,
+        body: {
+          key: payload.key,
+          src: payload.src,
+          placed_by: clientId,
+          ax: payload.ax,
+          ay: payload.ay,
+          rot: payload.rot,
+          anchor: "paper",
+        },
+      });
+    } else if (action === "move") {
+      const updated = await rest(`stickers?id=eq.${encodeURIComponent(payload.id)}`, {
+        method: "PATCH",
+        prefer: "return=representation",
+        withUser: true,
+        body: { ax: payload.ax, ay: payload.ay, rot: payload.rot },
+      });
+      if (!Array.isArray(updated) || !updated.length) throw new Error("board");
+    } else if (action === "remove") {
+      await rest(`stickers?id=eq.${encodeURIComponent(payload.id)}&placed_by=eq.${encodeURIComponent(clientId)}`, {
+        method: "DELETE",
+        prefer: "return=minimal",
+        withUser: true,
+      });
+    } else if (action === "reset") {
+      await rest(`stickers?placed_by=eq.${encodeURIComponent(clientId)}`, {
+        method: "DELETE",
+        prefer: "return=minimal",
+        withUser: true,
+      });
+    }
+    return readBoard();
   }
 
   function show(list, nextVersion) {
@@ -237,7 +314,7 @@
           render();
           if (!id) return;
           busy = true;
-          writeBoard("DELETE", "/api/stickers/" + id)
+          writeBoard("remove", { id })
             .then((data) => show(data.stickers, data.version))
             .catch(() => {
               version = -1;
@@ -253,7 +330,8 @@
           applyTransform(el, sticker);
           if (!sticker.id) return;
           busy = true;
-          writeBoard("PATCH", "/api/stickers/" + sticker.id, {
+          writeBoard("move", {
+            id: sticker.id,
             ax: sticker.ax,
             ay: sticker.ay,
             rot: sticker.rot,
@@ -299,12 +377,12 @@
     placed.push(sticker);
     layer.append(createPlaced(sticker));
     reset.classList.add("is-live");
-    writeBoard("POST", "/api/stickers", {
+    writeBoard("add", {
       key: sticker.key,
+      src: sticker.src,
       ax: sticker.ax,
       ay: sticker.ay,
       rot: sticker.rot,
-      by: clientId,
     })
       .then((data) => show(data.stickers, data.version))
       .catch(() => {
@@ -421,7 +499,7 @@
   reset.addEventListener("click", () => {
     if (!clientId) return;
     busy = true;
-    writeBoard("POST", "/api/stickers/reset", { by: clientId })
+    writeBoard("reset")
       .then((data) => show(data.stickers, data.version))
       .finally(() => {
         busy = false;
