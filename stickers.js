@@ -122,6 +122,12 @@
     remember(authConfig.url, created);
   }
 
+  let placed = [];
+  let version = -1;
+  let busy = false;
+  let lifting = false;
+  let renderPending = false;
+
   async function ensureSession() {
     session = readSession(authConfig.url);
     if (!session) {
@@ -154,14 +160,8 @@
       status: error.status || null,
       body: error.detail || { error: error.message },
     });
-    showAuthNote(noteFor(error));
+    if (error.status || error.code) showAuthNote(noteFor(error));
   });
-
-  let placed = [];
-  let version = -1;
-  let busy = false;
-  let lifting = false;
-  let renderPending = false;
 
   function measure() {
     const choice = sheet.querySelector(".sticker-choice");
